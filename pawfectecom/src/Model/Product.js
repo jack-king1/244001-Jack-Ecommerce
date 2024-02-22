@@ -143,4 +143,15 @@ const allproducts = [
     ),
 ];
 
-export { allproducts };
+const testProduct = new Product(
+    9,
+    "large",
+    "round",
+    "Cannopy Bed",
+    "a glamorous round bed for cats who appreciate a touch of elegance!",
+    "./Images/Products/canopybed.jpg",
+    61.99,
+    false
+);
+
+export { allproducts, testProduct };

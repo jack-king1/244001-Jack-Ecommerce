@@ -3,10 +3,12 @@ import { UserContext } from "../../Contexts/UserProvider";
 import { allproducts } from "../../Model/Product";
 import { useSearchParams } from "react-router-dom";
 import { GetFiftyPercentOff } from "../../Model/HelperFunctions";
+import { useNavigate } from "react-router-dom";
 
 function Products() {
     const userContext = useContext(UserContext);
     const [products, setProducts] = useState([]);
+    const navigate = useNavigate();
     useEffect(() => {
         //Get products from api here ready to be rendered with whatever filter the user applies e.g. category, name etc.
         //the filtering would happen before the results are retrieved to save api calls.
@@ -52,7 +54,10 @@ function Products() {
                                           £{product.price}
                                       </div>
                                   </div>
-                                  <div className="w-1/2 h-6 bg-orange-500 font-bold text-center text-white rounded hover:cursor-pointer hover:animate-pulse">
+                                  <div
+                                      onClick={() => navigate("/product")}
+                                      className="w-1/2 h-6 bg-orange-500 font-bold text-center text-white rounded hover:cursor-pointer hover:animate-pulse"
+                                  >
                                       Buy Now
                                   </div>
                                   {product.onsale ? (
