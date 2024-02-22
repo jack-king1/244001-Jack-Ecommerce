@@ -5,6 +5,7 @@ import { useSearchParams } from "react-router-dom";
 import { GetFiftyPercentOff } from "../../Model/HelperFunctions";
 import { useNavigate } from "react-router-dom";
 
+//layout inspo https://www.harrys.com/en/gb/products/dynamic-skin-care-duo/?selected=12331922
 function Products() {
     const userContext = useContext(UserContext);
     const [products, setProducts] = useState([]);
@@ -21,7 +22,10 @@ function Products() {
                 {products != null
                     ? products.map((product, index) => {
                           return (
-                              <div className="flex flex-col justify-center items-center rounded transition-all drop-shadow-lg bg-white border border-black border-opacity-20 p-2 hover:scale-105 hover:cursor-pointer">
+                              <div
+                                  onClick={() => navigate("/product")}
+                                  className="flex flex-col justify-center items-center rounded transition-all drop-shadow-lg bg-white border border-black border-opacity-20 p-2 hover:scale-105 hover:cursor-pointer"
+                              >
                                   <img
                                       className="rounded"
                                       src={product.image}

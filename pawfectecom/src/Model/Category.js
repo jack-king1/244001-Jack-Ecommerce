@@ -36,7 +36,7 @@ const stylecategories = [
         "./Images/smallcategorypink.png"
     ),
     new Category(
-        "Hooded/Cave",
+        "Cave",
         "Small beds for your adorabable kitten!",
         "./Images/smallcategorypink.png"
     ),
@@ -46,7 +46,7 @@ const stylecategories = [
         "./Images/smallcategorypink.png"
     ),
     new Category(
-        "Window Perch",
+        "Window",
         "Small beds for your adorabable kitten!",
         "./Images/smallcategorypink.png"
     ),
