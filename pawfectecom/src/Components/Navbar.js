@@ -6,7 +6,7 @@ import { FaCaretDown } from "react-icons/fa";
 
 function Navbar() {
     return (
-        <div className="flex flex-row justify-between px-4 py-3 items-center">
+        <div className="flex flex-row justify-between px-4 py-3 items-center border border-b-primary border-b-4">
             <div>
                 <img
                     className="w-12 md:w-40 hover:cursor-pointer hover:scale-110 transition-all"

@@ -7,7 +7,7 @@ import { sizecategories, stylecategories } from "../../Model/Category";
 
 function Home() {
     return (
-        <div className="flex flex-col w-full scroll overflow-y-auto">
+        <div className="flex flex-col w-full scroll overflow-y-auto max-w-screen">
             <Banner text="✈️ Free Delivery on orders over £50! ✈️" />
             <Image className="w-full mx-auto" url="./Images/banner.png" />
             <CategoryHeader text="Shop By Category" />

@@ -6,6 +6,9 @@ import {
 } from "react-router-dom";
 import Layout from "./Components/Layout";
 import Home from "./Components/Pages/Home";
+import Products from "./Components/Pages/Products";
+import ProductPage from "./Components/Pages/ProductPage";
+import CategoryPage from "./Components/Pages/CategoryPage";
 
 function App() {
     return (
@@ -13,6 +16,9 @@ function App() {
             <Routes>
                 <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />
+                    <Route path="/products" element={<Products />} />
+                    <Route path="/productpage" element={<ProductPage />} />
+                    <Route path="/category" element={<CategoryPage />} />
                 </Route>
             </Routes>
         </BrowserRouter>
