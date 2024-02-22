@@ -1,14 +1,17 @@
 import { useContext, useState } from "react";
 import { UserContext } from "../../Contexts/UserProvider";
 import { testProduct } from "../../Model/Product";
+import useWindowDimensions from "../../Model/ScreenDimensions";
 
 function ProductPage() {
     const userContext = useContext(UserContext);
+    const { height, width } = useWindowDimensions();
     const [product, setProduct] = useState(testProduct);
     const [quantity, setQuantity] = useState(1);
-    return (
-        <div className="flex flex-col items-center h-screen w-full md:flex-row mt-8">
-            <div className="w-5/6 md:w-1/2">
+
+    function MobileLayout() {
+        return (
+            <div className="w-5/6">
                 <div className="text-3xl">{product.productname}</div>
                 <div className="text-2xl text-primary">£{product.price}</div>
                 <img src={product.image}></img>
@@ -49,6 +52,14 @@ function ProductPage() {
                     </div>
                 </div>
             </div>
+        );
+    }
+
+    function DesktopLayout() {}
+
+    return (
+        <div className="flex flex-col items-center h-screen w-full md:flex-row mt-8 md:justify-center md:items-start">
+            {width < 768 ? MobileLayout() : DesktopLayout()}
         </div>
     );
 }
