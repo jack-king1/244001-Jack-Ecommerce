@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../Contexts/UserProvider";
 import { allproducts } from "../../Model/Product";
 import { useSearchParams } from "react-router-dom";
+import { GetFiftyPercentOff } from "../../Model/HelperFunctions";
 
 function Products() {
     const userContext = useContext(UserContext);
@@ -18,7 +19,7 @@ function Products() {
                 {products != null
                     ? products.map((product, index) => {
                           return (
-                              <div className="flex flex-col justify-center items-center rounded transition-all border border-black border-opacity-20 p-2 hover:scale-110">
+                              <div className="flex flex-col justify-center items-center rounded transition-all drop-shadow-lg bg-white border border-black border-opacity-20 p-2 hover:scale-105 hover:cursor-pointer">
                                   <img
                                       className="rounded"
                                       src={product.image}
@@ -30,14 +31,37 @@ function Products() {
                                       {product.productname}
                                   </div>
                                   <div
-                                      className="text-gray-950 text-center font-medium
+                                      className="text-gray-950 text-center font-medium flex gap-2 items-center
 "
                                   >
-                                      £{product.price}
+                                      {product.onsale ? (
+                                          <div className="text-red-500 font-bold text-lg">
+                                              £
+                                              {GetFiftyPercentOff(
+                                                  product.price
+                                              )}
+                                          </div>
+                                      ) : null}
+                                      <div
+                                          className={`${
+                                              product.onsale
+                                                  ? "line-through"
+                                                  : ""
+                                          }`}
+                                      >
+                                          £{product.price}
+                                      </div>
                                   </div>
                                   <div className="w-1/2 h-6 bg-orange-500 font-bold text-center text-white rounded hover:cursor-pointer hover:animate-pulse">
                                       Buy Now
                                   </div>
+                                  {product.onsale ? (
+                                      <div className="absolute bg-red-500 w-24 h-10 rounded-r-xl left-0 top-0 animate-pulse flex items-center justify-center">
+                                          <div className="text-white font-bold">
+                                              50% Off!
+                                          </div>
+                                      </div>
+                                  ) : null}
                               </div>
                           );
                       })

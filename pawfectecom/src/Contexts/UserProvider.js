@@ -4,7 +4,7 @@ export const UserContext = createContext();
 
 function UserProvider({ children }) {
     const [user, setUser] = useState(null);
-    const [userCart, setUserCart] = useState(null);
+    const [userCart, setUserCart] = useState([1, 2, 3]);
     const [loggedIn, setLoggedIn] = useState(false);
     const userContextValue = {
         loggedIn,
