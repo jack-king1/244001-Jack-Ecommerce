@@ -8,7 +8,8 @@ category images
 product page
 cart functionality
 product class
-all products page */
+all products page
+add search icon inside search bar */
 
 function CatgegoryDisplay(props) {
     return (
