@@ -3,15 +3,17 @@ import { FaBars, FaArrowDown } from "react-icons/fa6";
 import { LuShoppingBasket } from "react-icons/lu";
 import { CiUser } from "react-icons/ci";
 import { FaCaretDown } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
+    const navigate = useNavigate();
     return (
         <div className="flex flex-row justify-between px-4 py-3 items-center border border-b-primary border-b-4">
-            <div>
-                <img
-                    className="w-12 md:w-40 hover:cursor-pointer hover:scale-110 transition-all"
-                    src="./Images/logo.png"
-                ></img>
+            <div
+                onClick={() => navigate("/")}
+                className="hover:cursor-pointer hover:scale-110 transition-all"
+            >
+                <img className="w-12 md:w-40 " src="./Images/logo.png"></img>
             </div>
             <div className="flex-1 text-center w-4/5 justify-center items-center">
                 <div className="flex flex-row justify-center items-center w-full">
