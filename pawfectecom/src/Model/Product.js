@@ -29,7 +29,7 @@ const allproducts = [
         "flat",
         "Basic Flat Bed",
         "a flat bed perfect for any cat and place!",
-        "./Images/Products/catbedtest.png",
+        "/Images/Products/catbedtest.png",
         34.99,
         false,
         [
@@ -45,7 +45,7 @@ const allproducts = [
         "cave",
         "Paw Cave Bed",
         "a round bed ideal for larger cats and luxurious comfort!",
-        "./Images/Products/bedcave.jpg",
+        "/Images/Products/bedcave.jpg",
         37.99,
         false,
         [
@@ -61,7 +61,7 @@ const allproducts = [
         "cave",
         "Deluxe Cave Cat Bed",
         "a sleek flat bed designed for small spaces and cozy naps!",
-        "./Images/Products/boxbed.jpg",
+        "/Images/Products/boxbed.jpg",
         40.99,
         true,
         [
@@ -77,7 +77,7 @@ const allproducts = [
         "round",
         "Round Cat Bed",
         "a stylish round bed perfect for pampering your feline friend!",
-        "./Images/Products/catbed2.png",
+        "/Images/Products/catbed2.png",
         43.99,
         false,
         [
@@ -93,7 +93,7 @@ const allproducts = [
         "flat",
         "Cozy Small Lifted Bed",
         "a snug flat bed tailored for small cats seeking comfort!",
-        "./Images/Products/catwindow.png",
+        "/Images/Products/catwindow.png",
         46.99,
         false,
         [
@@ -109,7 +109,7 @@ const allproducts = [
         "round",
         "Oval Cave bed",
         "an opulent round bed that spells luxury for your cat's naptime!",
-        "./Images/Products/catcave.jpg",
+        "/Images/Products/catcave.jpg",
         49.99,
         false,
         [
@@ -125,7 +125,7 @@ const allproducts = [
         "flat",
         "Compact Flat Bed",
         "a space-saving flat bed suitable for compact living spaces!",
-        "./Images/Products/circlebed.jpg",
+        "/Images/Products/circlebed.jpg",
         52.99,
         false,
         [
@@ -141,7 +141,7 @@ const allproducts = [
         "round",
         "Hanging Window Bed",
         "a plush round bed providing ultimate comfort for your cat's nap!",
-        "./Images/Products/windowhammockbed.jpg",
+        "/Images/Products/windowhammockbed.jpg",
         55.99,
         false,
         [
@@ -157,7 +157,7 @@ const allproducts = [
         "flat",
         "Soft Tunnel Bed",
         "a chic flat bed that complements modern home decor!",
-        "./Images/Products/tunnelbed.jpg",
+        "/Images/Products/tunnelbed.jpg",
         58.99,
         false,
         [
@@ -173,7 +173,7 @@ const allproducts = [
         "round",
         "Spotty Bed",
         "a glamorous round bed for cats who appreciate a touch of elegance!",
-        "./Images/Products/spottybed.jpg",
+        "/Images/Products/spottybed.jpg",
         61.99,
         true,
         [
@@ -189,7 +189,7 @@ const allproducts = [
         "flat",
         "Chic Cave Bed",
         "a chic flat bed that complements modern home decor!",
-        "./Images/Products/babybed.jpg",
+        "/Images/Products/babybed.jpg",
         58.99,
         false,
         [
@@ -205,7 +205,7 @@ const allproducts = [
         "round",
         "Cannopy Bed",
         "a glamorous round bed for cats who appreciate a touch of elegance!",
-        "./Images/Products/canopybed.jpg",
+        "/Images/Products/canopybed.jpg",
         61.99,
         false,
         [
@@ -226,7 +226,7 @@ const testProduct = new Product(
     "round",
     "Cannopy Bed",
     "a glamorous round bed for cats who appreciate a touch of elegance!",
-    "./Images/Products/canopybed.jpg",
+    "/Images/Products/canopybed.jpg",
     61.99,
     true,
     [

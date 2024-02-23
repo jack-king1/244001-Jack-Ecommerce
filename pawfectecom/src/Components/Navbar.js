@@ -15,7 +15,7 @@ function Navbar() {
                 onClick={() => navigate("/")}
                 className="hover:cursor-pointer hover:scale-110 transition-all"
             >
-                <img className="w-12 md:w-40 " src="./Images/logo.png"></img>
+                <img className="w-12 md:w-40 " src="/Images/logo.png"></img>
             </div>
             <div className="flex-1 text-center w-4/5 justify-center items-center">
                 <div className="flex flex-row justify-center items-center w-full">

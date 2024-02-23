@@ -137,7 +137,7 @@ function ProductPage() {
                     <div className="flex-1 flex flex-col">
                         <div className="flex flex-row items-center gap-4">
                             <div className="text-3xl">
-                                {product.productname}
+                                {"/" + product.productname}
                             </div>
                             <div className="text-3xl">|</div>
                             <div className="text-primary text-4xl font-bold">

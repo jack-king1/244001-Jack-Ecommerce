@@ -24,7 +24,9 @@ function Products() {
                           return (
                               <div
                                   key={index}
-                                  onClick={() => navigate("/product")}
+                                  onClick={() =>
+                                      navigate(`/product/${product.id}`)
+                                  }
                                   className="flex flex-col justify-center items-center rounded transition-all drop-shadow-lg bg-white border border-black border-opacity-20 p-2 hover:scale-105 hover:cursor-pointer"
                               >
                                   <img
