@@ -1,6 +1,6 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../Contexts/UserProvider";
-import { testProduct } from "../../Model/Product";
+import { SelectProduct, testProduct } from "../../Model/Product";
 import useWindowDimensions from "../../Model/ScreenDimensions";
 import { AiOutlineSafety } from "react-icons/ai";
 import { FaTruck } from "react-icons/fa";
@@ -13,6 +13,11 @@ function ProductPage() {
     const [product, setProduct] = useState(testProduct);
     const [quantity, setQuantity] = useState(1);
     const params = useParams();
+
+    useEffect(() => {
+        console.log(params);
+        setProduct(SelectProduct(params.id));
+    }, []);
 
     function BuySection() {
         return (
@@ -53,6 +58,7 @@ function ProductPage() {
         );
     }
 
+    //under section which add trustworthyness to website.
     function CustomerSatisfaction() {
         return (
             <div className="mt-4">
@@ -66,7 +72,7 @@ function ProductPage() {
                     <div className="flex flex-row items-center gap-2">
                         <div>
                             <AiOutlineSafety />
-                        </div>{" "}
+                        </div>
                         <div className="font-bold">Quality Guarentee</div>
                     </div>
                     <div className="ml-8">
@@ -97,7 +103,7 @@ function ProductPage() {
             <div className="flex flex-row">
                 {!product.onsale ? (
                     <div className="flex flex-row">
-                        <div className="line-through">£{product.price}</div>
+                        <div className="">£{product.price}</div>
                     </div>
                 ) : (
                     <div className="flex flex-row gap-3 items-center">
@@ -131,13 +137,13 @@ function ProductPage() {
         return (
             <div className="w-2/3 flex flex-col text-black">
                 <div className="flex flex-row w-100 gap-4">
-                    <div className="flex-1 bg-red-500">
+                    <div className="flex-1">
                         <img className="w-full" src={product.image}></img>
                     </div>
                     <div className="flex-1 flex flex-col">
                         <div className="flex flex-row items-center gap-4">
                             <div className="text-3xl">
-                                {"/" + product.productname}
+                                {product.productname}
                             </div>
                             <div className="text-3xl">|</div>
                             <div className="text-primary text-4xl font-bold">

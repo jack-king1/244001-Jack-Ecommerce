@@ -218,7 +218,14 @@ const allproducts = [
 ];
 
 //Retrive a product with the selected ID.
-function SelectProduct(id) {}
+function SelectProduct(id) {
+    for (const product of allproducts) {
+        if (product.id == id) {
+            return product;
+        }
+    }
+    return null;
+}
 
 const testProduct = new Product(
     69,
@@ -237,4 +244,4 @@ const testProduct = new Product(
     ]
 );
 
-export { allproducts, testProduct };
+export { allproducts, testProduct, SelectProduct };
