@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FaBars, FaArrowDown } from "react-icons/fa6";
 import { LuShoppingBasket } from "react-icons/lu";
 import { CiUser } from "react-icons/ci";
@@ -9,6 +9,19 @@ import { UserContext } from "../Contexts/UserProvider";
 function Navbar() {
     const navigate = useNavigate();
     const userContext = useContext(UserContext);
+    const [basketCount, setBasketCount] = useState(
+        userContext.userBasket.GetSize()
+    );
+
+    useEffect(() => {
+        userContext.subscribe("basketUpdate", UpdateBasketCount);
+    }, []);
+
+    function UpdateBasketCount(count) {
+        console.log("Basket Event Triggered!");
+        setBasketCount(count);
+    }
+
     return (
         <div className="flex flex-row justify-between px-4 py-3 items-center border border-b-primary border-b-4">
             <div
@@ -35,7 +48,7 @@ function Navbar() {
                     {userContext.userBasket.items.length > 0 ? (
                         <div className="z-10 bg-red-500 text-white text-center rounded-full w-3.5 h-3.5 absolute -bottom-1.5 -right-1 flex items-center justify-center md:-bottom-0.5 md:-right-0.5">
                             <div className="text-xs text-white">
-                                {userContext.userBasket.GetSize()}
+                                {basketCount}
                             </div>
                             <div className="bg-red-300 absolute w-full h-full rounded-full z-0 animate-ping"></div>
                         </div>

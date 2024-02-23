@@ -67,7 +67,8 @@ export default class Basket {
      */
     AddItem(productID, callback) {
         this.items.push({ id: productID });
-        callback(this);
+        console.log("Calling event: updateBasket");
+        callback("basketUpdate", this.items.length);
     }
     /**
      * get size of basket.
