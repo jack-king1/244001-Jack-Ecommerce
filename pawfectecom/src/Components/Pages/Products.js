@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../Contexts/UserProvider";
 import { allproducts } from "../../Model/Product";
 import { useSearchParams } from "react-router-dom";
-import { GetFiftyPercentOff } from "../../Model/HelperFunctions";
+import { RoundToTwoDecimal } from "../../Model/HelperFunctions";
 import { useNavigate } from "react-router-dom";
 
 //layout inspo https://www.harrys.com/en/gb/products/dynamic-skin-care-duo/?selected=12331922
@@ -45,10 +45,7 @@ function Products() {
                                   >
                                       {product.onsale ? (
                                           <div className="text-red-500 font-bold text-lg">
-                                              £
-                                              {GetFiftyPercentOff(
-                                                  product.price
-                                              )}
+                                              £{product.GetPrice(product.price)}
                                           </div>
                                       ) : null}
                                       <div

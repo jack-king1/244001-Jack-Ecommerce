@@ -4,7 +4,7 @@ import { SelectProduct, testProduct } from "../../Model/Product";
 import useWindowDimensions from "../../Model/ScreenDimensions";
 import { AiOutlineSafety } from "react-icons/ai";
 import { FaTruck } from "react-icons/fa";
-import { GetFiftyPercentOff } from "../../Model/HelperFunctions";
+import { RoundToTwoDecimal } from "../../Model/HelperFunctions";
 import { useParams } from "react-router";
 
 function ProductPage() {
@@ -120,7 +120,7 @@ function ProductPage() {
                             £{product.price}
                         </div>
                         <div className="flex flex-row  text-red-500 text-3xl animate-pulse">
-                            £{GetFiftyPercentOff(product.price)}
+                            £{product.GetPrice(product.price)}
                         </div>
                     </div>
                 )}

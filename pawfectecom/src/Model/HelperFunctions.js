@@ -1,4 +1,3 @@
-export function GetFiftyPercentOff(price) {
-    let halfprice = price / 2;
-    return halfprice.toFixed(2);
+export function RoundToTwoDecimal(num) {
+    return Math.round(num * 100) / 100;
 }

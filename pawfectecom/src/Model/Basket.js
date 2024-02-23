@@ -1,3 +1,4 @@
+import { RoundToTwoDecimal } from "./HelperFunctions";
 import { unitTestProduct } from "./Product";
 
 export default class Basket {
@@ -17,10 +18,10 @@ export default class Basket {
 
         checkoutItems.map((item, index) => {
             console.log("Checkout list: ", item.product.GetPrice());
-            totalCost += item.product.GetPrice() * item.qty;
+            totalCost += RoundToTwoDecimal(item.product.GetPrice() * item.qty);
         });
 
-        return parseFloat(totalCost.toFixed(2));
+        return parseFloat(totalCost).toFixed(2);
     }
 
     //Unit Tests

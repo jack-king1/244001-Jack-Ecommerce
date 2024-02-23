@@ -1,5 +1,5 @@
-import { GetFiftyPercentOff } from "./HelperFunctions";
-
+import { RoundToTwoDecimal } from "./HelperFunctions";
+const Decimal = require("decimal.js");
 export class Product {
     constructor(
         id,
@@ -24,16 +24,20 @@ export class Product {
     }
 
     GetPrice() {
-        if (this.onsale) return GetFiftyPercentOff(this.price);
-        else return this.price;
+        let halfprice = Math.floor((this.price * 100) / 2) / 100;
+        let normalPrice = Math.floor(this.price * 100) / 100;
+        if (this.onsale) return halfprice;
+        else return normalPrice;
     }
 
     GetPriceQty(qty) {
         if (this.onsale) {
-            return GetFiftyPercentOff(this.price * qty);
+            return parseFloat(RoundToTwoDecimal(this.GetPrice() * qty)).toFixed(
+                2
+            );
         } else {
-            let price = this.price * qty;
-            return price.toFixed(2);
+            let price = (Math.floor(this.price * 100) * qty) / 100;
+            return parseFloat(price).toFixed(2);
         }
     }
 }
