@@ -49,7 +49,7 @@ function ProductPage() {
                     </div>
                 </div>
                 <div
-                    onClick={() => userContext.userBasket.Additem(params.id)}
+                    onClick={() => userContext.userBasket.AddItem(product.id)}
                     className="flex-1 flex items-center justify-center bg-orange-500 rounded transition-all hover:cursor-pointer hover:scale-105"
                 >
                     <div className="text-white font-bold">Buy Now</div>

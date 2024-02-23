@@ -12,7 +12,9 @@ export default class Basket {
     GetBasketSorted() {}
 
     //Add item to basket
-    AddItem() {}
+    AddItem(productID) {
+        console.log("adding item to basket! ItemID: ", productID);
+    }
 
     //remove item from basket
     RemoveItem() {}
