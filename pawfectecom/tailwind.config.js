@@ -7,7 +7,7 @@ module.exports = {
                 primary: "#26d07c",
                 secondary: "#d0267a",
             },
-            transitionDuration: {
+            transitionDuration2000: {
                 2000: "2000ms",
             },
         },
