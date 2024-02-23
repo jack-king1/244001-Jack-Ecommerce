@@ -7,7 +7,8 @@ export class Product {
         description,
         image,
         price,
-        onsale
+        onsale,
+        highlights
     ) {
         this.id = id;
         this.size = size;
@@ -17,6 +18,7 @@ export class Product {
         this.image = image;
         this.price = price;
         this.onsale = onsale;
+        this.highlights = highlights;
     }
 }
 
@@ -29,7 +31,13 @@ const allproducts = [
         "a flat bed perfect for any cat and place!",
         "./Images/Products/catbedtest.png",
         34.99,
-        false
+        false,
+        [
+            "The must have for minimalists",
+            "Easy to clean and machine washable!",
+            "Comes with a free cleaning brush and deoderizor.",
+            "Made of 100% cotton!",
+        ]
     ),
     new Product(
         1,
@@ -39,7 +47,13 @@ const allproducts = [
         "a round bed ideal for larger cats and luxurious comfort!",
         "./Images/Products/bedcave.jpg",
         37.99,
-        false
+        false,
+        [
+            "The must have for minimalists",
+            "Easy to clean and machine washable!",
+            "Comes with a free cleaning brush and deoderizor.",
+            "Made of 100% cotton!",
+        ]
     ),
     new Product(
         2,
@@ -49,7 +63,13 @@ const allproducts = [
         "a sleek flat bed designed for small spaces and cozy naps!",
         "./Images/Products/boxbed.jpg",
         40.99,
-        true
+        true,
+        [
+            "The must have for minimalists",
+            "Easy to clean and machine washable!",
+            "Comes with a free cleaning brush and deoderizor.",
+            "Made of 100% cotton!",
+        ]
     ),
     new Product(
         3,
@@ -59,7 +79,13 @@ const allproducts = [
         "a stylish round bed perfect for pampering your feline friend!",
         "./Images/Products/catbed2.png",
         43.99,
-        false
+        false,
+        [
+            "The must have for minimalists",
+            "Easy to clean and machine washable!",
+            "Comes with a free cleaning brush and deoderizor.",
+            "Made of 100% cotton!",
+        ]
     ),
     new Product(
         4,
@@ -69,7 +95,13 @@ const allproducts = [
         "a snug flat bed tailored for small cats seeking comfort!",
         "./Images/Products/catwindow.png",
         46.99,
-        false
+        false,
+        [
+            "The must have for minimalists",
+            "Easy to clean and machine washable!",
+            "Comes with a free cleaning brush and deoderizor.",
+            "Made of 100% cotton!",
+        ]
     ),
     new Product(
         5,
@@ -79,7 +111,13 @@ const allproducts = [
         "an opulent round bed that spells luxury for your cat's naptime!",
         "./Images/Products/catcave.jpg",
         49.99,
-        false
+        false,
+        [
+            "The must have for minimalists",
+            "Easy to clean and machine washable!",
+            "Comes with a free cleaning brush and deoderizor.",
+            "Made of 100% cotton!",
+        ]
     ),
     new Product(
         6,
@@ -89,7 +127,13 @@ const allproducts = [
         "a space-saving flat bed suitable for compact living spaces!",
         "./Images/Products/circlebed.jpg",
         52.99,
-        false
+        false,
+        [
+            "The must have for minimalists",
+            "Easy to clean and machine washable!",
+            "Comes with a free cleaning brush and deoderizor.",
+            "Made of 100% cotton!",
+        ]
     ),
     new Product(
         7,
@@ -99,7 +143,13 @@ const allproducts = [
         "a plush round bed providing ultimate comfort for your cat's nap!",
         "./Images/Products/windowhammockbed.jpg",
         55.99,
-        false
+        false,
+        [
+            "The must have for minimalists",
+            "Easy to clean and machine washable!",
+            "Comes with a free cleaning brush and deoderizor.",
+            "Made of 100% cotton!",
+        ]
     ),
     new Product(
         8,
@@ -109,7 +159,13 @@ const allproducts = [
         "a chic flat bed that complements modern home decor!",
         "./Images/Products/tunnelbed.jpg",
         58.99,
-        false
+        false,
+        [
+            "The must have for minimalists",
+            "Easy to clean and machine washable!",
+            "Comes with a free cleaning brush and deoderizor.",
+            "Made of 100% cotton!",
+        ]
     ),
     new Product(
         9,
@@ -119,7 +175,13 @@ const allproducts = [
         "a glamorous round bed for cats who appreciate a touch of elegance!",
         "./Images/Products/spottybed.jpg",
         61.99,
-        true
+        true,
+        [
+            "The must have for minimalists",
+            "Easy to clean and machine washable!",
+            "Comes with a free cleaning brush and deoderizor.",
+            "Made of 100% cotton!",
+        ]
     ),
     new Product(
         8,
@@ -129,7 +191,13 @@ const allproducts = [
         "a chic flat bed that complements modern home decor!",
         "./Images/Products/babybed.jpg",
         58.99,
-        false
+        false,
+        [
+            "The must have for minimalists",
+            "Easy to clean and machine washable!",
+            "Comes with a free cleaning brush and deoderizor.",
+            "Made of 100% cotton!",
+        ]
     ),
     new Product(
         9,
@@ -139,9 +207,18 @@ const allproducts = [
         "a glamorous round bed for cats who appreciate a touch of elegance!",
         "./Images/Products/canopybed.jpg",
         61.99,
-        false
+        false,
+        [
+            "The must have for minimalists",
+            "Easy to clean and machine washable!",
+            "Comes with a free cleaning brush and deoderizor.",
+            "Made of 100% cotton!",
+        ]
     ),
 ];
+
+//Retrive a product with the selected ID.
+function SelectProduct(id) {}
 
 const testProduct = new Product(
     9,
@@ -151,7 +228,13 @@ const testProduct = new Product(
     "a glamorous round bed for cats who appreciate a touch of elegance!",
     "./Images/Products/canopybed.jpg",
     61.99,
-    false
+    true,
+    [
+        "The must have for minimalists",
+        "Easy to clean and machine washable!",
+        "Comes with a free cleaning brush and deoderizor.",
+        "Made of 100% cotton!",
+    ]
 );
 
 export { allproducts, testProduct };
