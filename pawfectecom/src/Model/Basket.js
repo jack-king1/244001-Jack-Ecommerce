@@ -1,6 +1,7 @@
 export default class Basket {
     constructor() {
-        this.items = ["poo"];
+        //items is the array that holds all the item ids currently in basket.
+        this.items = ["temp item"];
     }
 
     //calculate total value of items taking into account sale price/amount.
@@ -11,7 +12,10 @@ export default class Basket {
     //Return an array with products grouped into ids for stacks of items.
     GetBasketSorted() {}
 
-    //Add item to basket
+    /**
+     * Add item to basket
+     * @param {*} productID
+     */
     AddItem(productID) {
         console.log("adding item to basket! ItemID: ", productID);
     }
@@ -19,7 +23,10 @@ export default class Basket {
     //remove item from basket
     RemoveItem() {}
 
-    //get size of basket.
+    /**
+     * get size of basket.
+     * @returns items.length
+     */
     GetSize() {
         return this.items.length;
     }
