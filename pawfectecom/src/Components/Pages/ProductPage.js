@@ -5,12 +5,14 @@ import useWindowDimensions from "../../Model/ScreenDimensions";
 import { AiOutlineSafety } from "react-icons/ai";
 import { FaTruck } from "react-icons/fa";
 import { GetFiftyPercentOff } from "../../Model/HelperFunctions";
+import { useParams } from "react-router";
 
 function ProductPage() {
     const userContext = useContext(UserContext);
     const { height, width } = useWindowDimensions();
     const [product, setProduct] = useState(testProduct);
     const [quantity, setQuantity] = useState(1);
+    const params = useParams();
 
     function BuySection() {
         return (
@@ -41,7 +43,10 @@ function ProductPage() {
                         <div className="font-bold text-xl">+</div>
                     </div>
                 </div>
-                <div className="flex-1 flex items-center justify-center bg-orange-500 rounded transition-all hover:cursor-pointer hover:scale-105">
+                <div
+                    onClick={() => userContext.userBasket.Additem(params.id)}
+                    className="flex-1 flex items-center justify-center bg-orange-500 rounded transition-all hover:cursor-pointer hover:scale-105"
+                >
                     <div className="text-white font-bold">Buy Now</div>
                 </div>
             </div>

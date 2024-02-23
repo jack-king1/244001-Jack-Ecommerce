@@ -29,9 +29,11 @@ function Navbar() {
                 <CiUser className="text-black text-2xl cursor-pointer transition-all hover:scale-110 md:text-4xl hover:border-b-primary hover:border-b-4" />
                 <div className="relative hover:scale-105 cursor-pointer transition-all hover:border-b-primary hover:border-b-4">
                     <LuShoppingBasket className="text-black text-xl md:text-4xl" />
-                    {userContext.userCart.length > 0 ? (
+                    {userContext.userBasket.GetSize() > 0 ? (
                         <div className="z-10 bg-red-500 text-white text-center rounded-full w-3.5 h-3.5 absolute -bottom-1.5 -right-1 flex items-center justify-center md:-bottom-0.5 md:-right-0.5">
-                            <div className="text-xs text-white">3</div>
+                            <div className="text-xs text-white">
+                                {userContext.userBasket.GetSize()}
+                            </div>
                             <div className="bg-red-300 absolute w-full h-full rounded-full z-0 animate-ping"></div>
                         </div>
                     ) : null}

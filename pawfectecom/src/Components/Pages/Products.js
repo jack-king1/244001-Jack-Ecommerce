@@ -23,6 +23,7 @@ function Products() {
                     ? products.map((product, index) => {
                           return (
                               <div
+                                  key={index}
                                   onClick={() => navigate("/product")}
                                   className="flex flex-col justify-center items-center rounded transition-all drop-shadow-lg bg-white border border-black border-opacity-20 p-2 hover:scale-105 hover:cursor-pointer"
                               >
@@ -59,7 +60,12 @@ function Products() {
                                       </div>
                                   </div>
                                   <div
-                                      onClick={() => navigate("/product")}
+                                      //Navigate to given product id and pass in via props the product ID.
+                                      onClick={() =>
+                                          navigate(`/product/${product.id}`, {
+                                              state: { id: product.id },
+                                          })
+                                      }
                                       className="w-1/2 h-6 bg-orange-500 font-bold text-center text-white rounded hover:cursor-pointer hover:animate-pulse"
                                   >
                                       Buy Now

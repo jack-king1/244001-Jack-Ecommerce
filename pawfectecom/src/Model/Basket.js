@@ -1,6 +1,6 @@
 export default class Basket {
     constructor() {
-        this.items = [];
+        this.items = ["poo"];
     }
 
     //calculate total value of items taking into account sale price/amount.
@@ -18,7 +18,7 @@ export default class Basket {
     RemoveItem() {}
 
     //get size of basket.
-    GetBasketSize() {
+    GetSize() {
         return this.items.length;
     }
 }

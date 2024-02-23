@@ -5,17 +5,17 @@ export const UserContext = createContext();
 
 function UserProvider({ children }) {
     const [user, setUser] = useState(null);
-    const [userCart, setUserCart] = useState(new Basket());
+    const [userBasket, setUserBasket] = useState(new Basket());
     const [loggedIn, setLoggedIn] = useState(false);
 
     useEffect(() => {
-        console.log(userCart);
-    }, [userCart]);
+        console.log(userBasket);
+    }, [userBasket]);
 
     const userContextValue = {
         loggedIn,
         user,
-        userCart,
+        userBasket,
     };
     return (
         <UserContext.Provider value={userContextValue}>
