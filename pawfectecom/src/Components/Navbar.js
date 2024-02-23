@@ -58,15 +58,6 @@ function Navbar() {
                 </div>
 
                 <FaBars className="text-black cursor-pointer md:hidden" />
-                <div
-                    className="hidden md:flex md:h-9 transition-all justify-center items-center 
-                hover:cursor-pointer hover:scale-105 hover:border-b-primary hover:border-b-4"
-                >
-                    <div className="">Categories</div>
-                    <div>
-                        <FaCaretDown className="text-xl" />
-                    </div>
-                </div>
             </div>
         </div>
     );
