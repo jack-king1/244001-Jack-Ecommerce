@@ -19,20 +19,32 @@ export default class Basket {
             console.log("Checkout list: ", item.product.GetPrice());
             totalCost += item.product.GetPrice() * item.qty;
         });
-        totalCost.toFixed(2);
-        return totalCost;
+
+        return parseFloat(totalCost.toFixed(2));
     }
 
     //Unit Tests
-    CalculateTotalTestOne() {
-        console.log("PLEASE WORK!");
-        let expectedTotal = 400;
+    //Test to se if output is a number and not any other type.
+    CalculateTotalAbsTestTwo() {
+        let expectedOutput = "number";
         let productList = [{ product: unitTestProduct, qty: 3 }];
         let total = this.CalculateTotal(productList);
         console.assert(
-            expectedTotal != total,
+            typeof total == expectedOutput,
+            "Error! Calculation not working!",
+            typeof total
+        );
+    }
+
+    CalculateTotalTestOne() {
+        let expectedTotal = 300;
+        let productList = [{ product: unitTestProduct, qty: 3 }];
+        let total = this.CalculateTotal(productList);
+        console.assert(
+            expectedTotal == total,
             "Error! Calculation not working!"
         );
+        this.CalculateTotalAbsTestTwo();
     }
 
     //Return an array with products grouped into ids for stacks of items.
