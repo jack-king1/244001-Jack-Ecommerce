@@ -23,6 +23,10 @@ export class Product {
         this.highlights = highlights;
     }
 
+    /**
+     * returns price for sale or non sale to 2 decimal places floored.
+     * @returns price
+     */
     GetPrice() {
         let halfprice = Math.floor((this.price * 100) / 2) / 100;
         let normalPrice = Math.floor(this.price * 100) / 100;
@@ -30,6 +34,11 @@ export class Product {
         else return normalPrice;
     }
 
+    /**
+     * return total row item cost for given quantity of item with sale or no sale price.
+     * @param {*} qty
+     * @returns
+     */
     GetPriceQty(qty) {
         if (this.onsale) {
             return parseFloat(RoundToTwoDecimal(this.GetPrice() * qty)).toFixed(
