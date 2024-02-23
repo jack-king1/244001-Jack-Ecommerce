@@ -5,6 +5,7 @@ import { CiUser } from "react-icons/ci";
 import { FaCaretDown } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../Contexts/UserProvider";
+import SlideInAlert from "./Alerts/SlideInAlert";
 
 function Navbar() {
     const navigate = useNavigate();
@@ -23,7 +24,8 @@ function Navbar() {
     }
 
     return (
-        <div className="flex flex-row justify-between px-4 py-3 items-center border border-b-primary border-b-4">
+        <div className="flex flex-row justify-between px-4 py-3 items-center border border-b-primary border-b-4 relative">
+            <SlideInAlert />
             <div
                 onClick={() => navigate("/")}
                 className="hover:cursor-pointer hover:scale-110 transition-all"

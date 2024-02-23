@@ -52,7 +52,8 @@ function ProductPage() {
                     onClick={() =>
                         userContext.userBasket.AddItem(
                             product.id,
-                            userContext.emit
+                            userContext.emit,
+                            quantity
                         )
                     }
                     className="flex-1 flex items-center justify-center bg-orange-500 rounded transition-all hover:cursor-pointer hover:scale-105"

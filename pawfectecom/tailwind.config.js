@@ -7,6 +7,9 @@ module.exports = {
                 primary: "#26d07c",
                 secondary: "#d0267a",
             },
+            transitionDuration: {
+                2000: "2000ms",
+            },
         },
     },
     plugins: [],

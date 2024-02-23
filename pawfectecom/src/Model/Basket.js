@@ -66,8 +66,10 @@ export default class Basket {
      * Add item to basket
      * @param {*} productID
      */
-    AddItem(productID, callback) {
-        this.items.push({ id: productID });
+    AddItem(productID, callback, qty) {
+        for (let i = 0; i < qty; i++) {
+            this.items.push({ id: productID });
+        }
         console.log("Calling event: updateBasket");
         callback("basketUpdate", this.items.length);
     }
