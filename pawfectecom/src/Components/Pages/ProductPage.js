@@ -49,7 +49,12 @@ function ProductPage() {
                     </div>
                 </div>
                 <div
-                    onClick={() => userContext.userBasket.AddItem(product.id)}
+                    onClick={() =>
+                        userContext.userBasket.AddItem(
+                            product.id,
+                            userContext.UpdateBasket
+                        )
+                    }
                     className="flex-1 flex items-center justify-center bg-orange-500 rounded transition-all hover:cursor-pointer hover:scale-105"
                 >
                     <div className="text-white font-bold">Buy Now</div>
@@ -90,7 +95,11 @@ function ProductPage() {
                 <div>
                     <ul className="list-disc mt-2">
                         {product.highlights.map((item, index) => {
-                            return <li className="ml-6">{item}</li>;
+                            return (
+                                <li key={index} className="ml-6">
+                                    {item}
+                                </li>
+                            );
                         })}
                     </ul>
                 </div>

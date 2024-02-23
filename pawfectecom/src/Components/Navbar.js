@@ -27,9 +27,12 @@ function Navbar() {
             </div>
             <div className="flex flex-row gap-4 items-center">
                 <CiUser className="text-black text-2xl cursor-pointer transition-all hover:scale-110 md:text-4xl hover:border-b-primary hover:border-b-4" />
-                <div className="relative hover:scale-105 cursor-pointer transition-all hover:border-b-primary hover:border-b-4">
+                <div
+                    onClick={() => navigate("/checkout")}
+                    className="relative hover:scale-105 cursor-pointer transition-all hover:border-b-primary hover:border-b-4"
+                >
                     <LuShoppingBasket className="text-black text-xl md:text-4xl" />
-                    {userContext.userBasket.GetSize() > 0 ? (
+                    {userContext.userBasket.items.length > 0 ? (
                         <div className="z-10 bg-red-500 text-white text-center rounded-full w-3.5 h-3.5 absolute -bottom-1.5 -right-1 flex items-center justify-center md:-bottom-0.5 md:-right-0.5">
                             <div className="text-xs text-white">
                                 {userContext.userBasket.GetSize()}

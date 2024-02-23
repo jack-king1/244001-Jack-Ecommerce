@@ -9,13 +9,18 @@ function UserProvider({ children }) {
     const [loggedIn, setLoggedIn] = useState(false);
 
     useEffect(() => {
-        console.log(userBasket);
+        console.log("User basket updated: ", userBasket);
     }, [userBasket]);
+
+    function UpdateBasket(newBasket) {
+        setUserBasket(newBasket);
+    }
 
     const userContextValue = {
         loggedIn,
         user,
         userBasket,
+        UpdateBasket,
     };
     return (
         <UserContext.Provider value={userContextValue}>

@@ -219,7 +219,9 @@ const allproducts = [
 
 //Retrive a product with the selected ID.
 function SelectProduct(id) {
+    console.log("Fetching id: ", id);
     for (const product of allproducts) {
+        console.log(product.id);
         if (product.id == id) {
             return product;
         }
