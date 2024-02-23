@@ -1,3 +1,5 @@
+import { GetFiftyPercentOff } from "./HelperFunctions";
+
 export class Product {
     constructor(
         id,
@@ -19,6 +21,20 @@ export class Product {
         this.price = price;
         this.onsale = onsale;
         this.highlights = highlights;
+    }
+
+    GetPrice() {
+        if (this.onsale) return GetFiftyPercentOff(this.price);
+        else return this.price;
+    }
+
+    GetPriceQty(qty) {
+        if (this.onsale) {
+            return GetFiftyPercentOff(this.price * qty);
+        } else {
+            let price = this.price * qty;
+            return price.toFixed(2);
+        }
     }
 }
 
@@ -221,7 +237,6 @@ const allproducts = [
 function SelectProduct(id) {
     console.log("Fetching id: ", id);
     for (const product of allproducts) {
-        console.log(product.id);
         if (product.id == id) {
             return product;
         }

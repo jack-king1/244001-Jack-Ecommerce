@@ -5,8 +5,14 @@ export default class Basket {
     }
 
     //calculate total value of items taking into itemount sale price/amount.
-    CalculateBasketTotal() {
-        return 0;
+    CalculateTotal(checkoutItems) {
+        let totalCost = 0;
+
+        checkoutItems.map((item, index) => {
+            console.log("Checkout list: ", item.product.GetPrice());
+            totalCost += item.product.GetPrice() * item.qty;
+        });
+        return totalCost;
     }
 
     //Return an array with products grouped into ids for stacks of items.
