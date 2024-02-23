@@ -184,7 +184,7 @@ const allproducts = [
         ]
     ),
     new Product(
-        8,
+        10,
         "small",
         "flat",
         "Chic Cave Bed",
@@ -200,7 +200,7 @@ const allproducts = [
         ]
     ),
     new Product(
-        9,
+        11,
         "large",
         "round",
         "Cannopy Bed",
@@ -221,7 +221,7 @@ const allproducts = [
 function SelectProduct(id) {}
 
 const testProduct = new Product(
-    9,
+    69,
     "large",
     "round",
     "Cannopy Bed",
