@@ -18,7 +18,10 @@ function Checkout() {
         let productsList = [];
         const keys = Object.keys(basketList);
         const mappedKeys = keys.map((key) => {
-            productsList.push(SelectProduct(key));
+            productsList.push({
+                product: SelectProduct(key),
+                qty: basketList[key],
+            });
             return key;
         });
         console.log("Checkout Products: ", productsList);
