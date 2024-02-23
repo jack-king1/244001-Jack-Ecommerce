@@ -261,4 +261,21 @@ const testProduct = new Product(
     ]
 );
 
-export { allproducts, testProduct, SelectProduct };
+const unitTestProduct = new Product(
+    69,
+    "large",
+    "round",
+    "Cannopy Bed",
+    "a glamorous round bed for cats who appreciate a touch of elegance!",
+    "/Images/Products/canopybed.jpg",
+    100,
+    false,
+    [
+        "The must have for minimalists",
+        "Easy to clean and machine washable!",
+        "Comes with a free cleaning brush and deoderizor.",
+        "Made of 100% cotton!",
+    ]
+);
+
+export { allproducts, testProduct, unitTestProduct, SelectProduct };

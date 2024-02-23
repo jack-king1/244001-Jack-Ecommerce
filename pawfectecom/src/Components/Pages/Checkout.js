@@ -10,6 +10,7 @@ function Checkout() {
     const [basketList, setBasketList] = useState(
         userContext.userBasket.GetBasketSorted()
     );
+
     //This use state will hold an array of objects which include product and qty of that item.
     const [finalCheckOutItemObjectList, setFinalCheckoutItemObjectList] =
         useState([]);

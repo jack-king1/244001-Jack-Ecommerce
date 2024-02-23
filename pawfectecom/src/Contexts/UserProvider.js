@@ -10,6 +10,7 @@ function UserProvider({ children }) {
 
     useEffect(() => {
         console.log("User basket updated: ", userBasket);
+        userBasket.CalculateTotalTestOne();
     }, [userBasket]);
 
     function UpdateBasket(newBasket) {
