@@ -17,9 +17,24 @@ function Products() {
         setProducts(allproducts);
     }, []);
 
+    function filterProducts(type) {
+        function checkType(product) {
+            return product.category == type;
+        }
+        const result = allproducts.filter(checkType);
+        console.log("Filtered: ", result);
+        setProducts(result);
+    }
+
+    function removeFilter() {
+        setProducts(allproducts);
+    }
     return (
         <div className="flex flex-col justify-center items-center">
-            <ProductCategoriesBar />
+            <ProductCategoriesBar
+                action={filterProducts}
+                remove={removeFilter}
+            />
             <div className="flex justify-center items-center">
                 <div className="flex text-black grid-cols-2 grid w-full gap-4 m-2 md:w-1/2 md:grid-cols-4">
                     {products != null
