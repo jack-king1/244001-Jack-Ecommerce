@@ -18,14 +18,7 @@ function Checkout() {
     //once basketList has been loaded, create tuples of product and qty ready to display in checkout.
     useEffect(() => {
         let productsList = [];
-        const keys = Object.keys(basketList);
-        const mappedKeys = keys.map((key) => {
-            productsList.push({
-                product: SelectProduct(key),
-                qty: basketList[key],
-            });
-            return key;
-        });
+        productsList = userContext.userBasket.getBasketItems();
         console.log("Checkout Products: ", productsList);
         setFinalCheckoutItemObjectList(productsList);
     }, [basketList]);
