@@ -14,20 +14,20 @@ function SlideInAlert() {
         setIsVisible(true);
         setTimeout(function () {
             setIsVisible(false);
-        }, 1500);
+        }, 4000);
     }
 
     return (
         <div
-            className={`fixed pointer-events-none z-50 flex justify-end top-1/4 -right-0 w-2/5 transition-transform duration-[1500ms] ${
+            className={`flex items-center fixed pointer-events-none h-20 z-50 -top-2 left-1/2 w-screen transition-all duration-[1500ms] ${
                 isVisible
-                    ? "transform -translate-x-0"
-                    : "transform translate-x-full"
+                    ? "transform translate-y-0"
+                    : "transform -translate-y-full"
             }`}
         >
-            <h1 className="bg-red-500 text-white rounded-l text-xl font-bold p-4">
+            <div className="bg-primary text-white text-xl font-bold p-8 rounded-lg w-3/4 md:w-1/4 -translate-x-1/2 text-center">
                 Item Added
-            </h1>
+            </div>
         </div>
     );
 }
