@@ -1,5 +1,4 @@
 import React from "react";
-import "../Styles/CategoryStyle.css";
 import { useNavigate } from "react-router-dom";
 import CategoryButton from "./Buttons/CategoryButton";
 

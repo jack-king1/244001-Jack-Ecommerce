@@ -98,6 +98,31 @@ export default class Basket {
         callback("basketUpdate", this.GetSize()); //change this to a function which goes through all basket items and tallys total.
     }
 
+    //Update cart qty in checkout with given qty and callback to update navbar basket count
+    EditCartQty(productID, callback, qty) {
+        for (const item of this.basketItems) {
+            if (item.product.id == productID) {
+                //product exisits, add to qty.
+                item.qty += qty;
+            }
+        }
+        callback("basketUpdate", this.GetSize()); //change this to a function which goes through all basket items and tallys total.
+    }
+
+    //Remove given item from basket and callback to update navbar basket count
+    RemoveItem(productID, callback) {
+        let index = 0;
+        for (const item of this.basketItems) {
+            if (item.product.id == productID) {
+                this.basketItems.splice(index, 1); // 2nd parameter means remove one item only
+                callback("basketUpdate", this.GetSize()); //change this to a function which goes through all basket items and tallys total.
+                return;
+            }
+            index++;
+        }
+        return;
+    }
+
     /**
      * get size of basket.
      * @returns items.length
