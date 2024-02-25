@@ -47,6 +47,9 @@ export default class Basket {
         );
     }
 
+    /**
+     * Calculate
+     */
     CalculateTotalTestOne() {
         let expectedTotal = 300;
         let productList = [{ product: unitTestProduct, qty: 3 }];
@@ -81,11 +84,20 @@ export default class Basket {
         }
 
         console.log("Calling event: updateBasket");
-        callback("basketUpdate", this.GetSize()); //change this to a function which goes through all basket items and tallys total.
+        callback("basketUpdate", {
+            count: this.GetSize(),
+            message: "Item Added",
+        }); //change this to a function which goes through all basket items and tallys total.
     }
 
     //Update cart qty in checkout with given qty and callback to update navbar basket count
     EditCartQty(productID, callback, qty, navbarcallback) {
+        let msg = "";
+        if (qty > 0) {
+            msg = "Item Added";
+        } else {
+            msg = "Item Removed";
+        }
         for (const item of this.basketItems) {
             if (item.product.id == productID) {
                 //product exisits, add to qty.
@@ -96,7 +108,7 @@ export default class Basket {
         }
         //callback("basketUpdate", this.GetSize()); //change this to a function which goes through all basket items and tallys total.
         callback();
-        navbarcallback("basketUpdate", this.GetSize());
+        navbarcallback("basketUpdate", { count: this.GetSize(), message: msg });
     }
 
     //Remove given item from basket and callback to update navbar basket count
@@ -105,12 +117,14 @@ export default class Basket {
         for (const item of this.basketItems) {
             if (item.product.id == productID) {
                 this.basketItems.splice(index, 1); // 2nd parameter means remove one item only
-                navbarcallback("basketUpdate", this.GetSize()); //change this to a function which goes through all basket items and tallys total.
-                return;
+                callback("basketUpdate", {
+                    count: this.GetSize(),
+                    message: "Item(s) Removed",
+                }); //change this to a function which goes through all basket items and tallys total.
             }
             index++;
         }
-        callback();
+        navbarcallback();
     }
 
     /**

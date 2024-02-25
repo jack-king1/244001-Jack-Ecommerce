@@ -5,12 +5,13 @@ import { UserContext } from "../../Contexts/UserProvider";
 function SlideInAlert() {
     const [isVisible, setIsVisible] = useState(false);
     const userContext = useContext(UserContext);
-
+    const [message, setMessage] = useState("");
     useEffect(() => {
         userContext.subscribe("basketUpdate", TriggerAnimation);
     }, []);
 
-    function TriggerAnimation() {
+    function TriggerAnimation(itemAdded) {
+        setMessage(itemAdded.message);
         setIsVisible(true);
         setTimeout(function () {
             setIsVisible(false);
@@ -26,7 +27,7 @@ function SlideInAlert() {
             }`}
         >
             <div className="bg-primary text-white text-xl font-bold p-8 rounded-lg w-3/4 md:w-1/4 -translate-x-1/2 text-center">
-                Item Added
+                {message}
             </div>
         </div>
     );

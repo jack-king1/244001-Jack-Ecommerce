@@ -18,9 +18,9 @@ function Navbar() {
         userContext.subscribe("basketUpdate", UpdateBasketCount);
     }, []);
 
-    function UpdateBasketCount(count) {
+    function UpdateBasketCount(eventObj) {
         console.log("Basket Event Triggered!");
-        setBasketCount(count);
+        setBasketCount(eventObj.count);
     }
 
     return (
