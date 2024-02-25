@@ -58,20 +58,6 @@ export default class Basket {
         this.CalculateTotalAbsTestTwo();
     }
 
-    //Return an array with products grouped into ids for stacks of items.
-    GetBasketSorted() {
-        const grouped = this.basketItems.reduce((item, obj) => {
-            const key = obj.id;
-            if (!item[key]) {
-                item[key] = 0;
-            }
-            item[key]++;
-            return item;
-        }, {});
-        console.log("Sorted Basket: ", grouped);
-        return grouped;
-    }
-
     /**
      * Add item to basket
      * @param {*} productID
@@ -99,28 +85,32 @@ export default class Basket {
     }
 
     //Update cart qty in checkout with given qty and callback to update navbar basket count
-    EditCartQty(productID, callback, qty) {
+    EditCartQty(productID, callback, qty, navbarcallback) {
         for (const item of this.basketItems) {
             if (item.product.id == productID) {
                 //product exisits, add to qty.
-                item.qty += qty;
+                if (item.qty + qty >= 1) {
+                    item.qty += qty;
+                }
             }
         }
-        callback("basketUpdate", this.GetSize()); //change this to a function which goes through all basket items and tallys total.
+        //callback("basketUpdate", this.GetSize()); //change this to a function which goes through all basket items and tallys total.
+        callback();
+        navbarcallback("basketUpdate", this.GetSize());
     }
 
     //Remove given item from basket and callback to update navbar basket count
-    RemoveItem(productID, callback) {
+    RemoveItem(productID, navbarcallback, callback) {
         let index = 0;
         for (const item of this.basketItems) {
             if (item.product.id == productID) {
                 this.basketItems.splice(index, 1); // 2nd parameter means remove one item only
-                callback("basketUpdate", this.GetSize()); //change this to a function which goes through all basket items and tallys total.
+                navbarcallback("basketUpdate", this.GetSize()); //change this to a function which goes through all basket items and tallys total.
                 return;
             }
             index++;
         }
-        return;
+        callback();
     }
 
     /**

@@ -8,6 +8,7 @@ function ProductCategoriesBar(props) {
                 {stylecategories.map((cat, index) => {
                     return (
                         <div
+                            key={index}
                             onClick={() => props.action(cat.type)}
                             className="flex-1 transition-all hover:bg-green-200 hover:text-xl hover:cursor-pointer"
                         >
