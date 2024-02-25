@@ -4,7 +4,7 @@ import { stylecategories } from "../Model/Category";
 function ProductCategoriesBar(props) {
     return (
         <div className="flex flex-row h-9 w-full justify-center items-center">
-            <div className="w-1/2 flex flex-row justify-between text-center items-center">
+            <div className="w-full md:w-1/2 flex flex-row justify-between text-center items-center">
                 {stylecategories.map((cat, index) => {
                     return (
                         <div
