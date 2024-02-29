@@ -26,25 +26,25 @@ const sizecategories = [
         "Small",
         SIZE_TYPE.SMALL,
         "Small beds for your adorabable kitten!",
-        "./Images/smallcategorypink.png"
+        "./Images/smallcategory1.png"
     ),
     new Category(
         "Medium",
         SIZE_TYPE.MEDIUM,
         "Small beds for your adorabable kitten!",
-        "./Images/smallcategorypink.png"
+        "./Images/mediumcategory1.png"
     ),
     new Category(
         "Large",
         SIZE_TYPE.LARGE,
         "Small beds for your adorabable kitten!",
-        "./Images/smallcategorypink.png"
+        "./Images/largecategory1.png"
     ),
     new Category(
         "Extra Large",
         SIZE_TYPE.XLARGE,
         "Small beds for your adorabable kitten!",
-        "./Images/smallcategorypink.png"
+        "./Images/xlargecategory1.png"
     ),
 ];
 
@@ -53,25 +53,25 @@ const stylecategories = [
         "Flat",
         STYLE_TYPE.FLAT,
         "Small beds for your adorabable kitten!",
-        "./Images/smallcategorypink.png"
+        "./Images/flatstyle.png"
     ),
     new Category(
         "Cave",
         STYLE_TYPE.CAVE,
         "Small beds for your adorabable kitten!",
-        "./Images/smallcategorypink.png"
+        "./Images/cavestyle.png"
     ),
     new Category(
         "Donut",
         STYLE_TYPE.DONUT,
         "Small beds for your adorabable kitten!",
-        "./Images/smallcategorypink.png"
+        "./Images/donutstyle.png"
     ),
     new Category(
         "Window",
         STYLE_TYPE.WINDOW,
         "Small beds for your adorabable kitten!",
-        "./Images/smallcategorypink.png"
+        "./Images/windowstyle.png"
     ),
 ];
 
