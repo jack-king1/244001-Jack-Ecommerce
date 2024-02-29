@@ -89,7 +89,7 @@ function Products() {
                                                   }
                                               )
                                           }
-                                          className="w-1/2 h-6 bg-orange-500 font-bold text-center text-white rounded hover:cursor-pointer hover:animate-pulse"
+                                          className="w-1/2 h-6 overflow-hidden bg-orange-500 font-bold text-center text-white rounded hover:cursor-pointer hover:animate-pulse"
                                       >
                                           Buy Now
                                       </div>

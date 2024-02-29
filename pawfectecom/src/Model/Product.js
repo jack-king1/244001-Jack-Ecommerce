@@ -168,7 +168,7 @@ const allproducts = [
     new Product(
         7,
         SIZE_TYPE.LARGE,
-        STYLE_TYPE.DONUT,
+        STYLE_TYPE.WINDOW,
         "Hanging Window Bed",
         "a plush round bed providing ultimate comfort for your cat's nap!",
         "/Images/Products/windowhammockbed.jpg",

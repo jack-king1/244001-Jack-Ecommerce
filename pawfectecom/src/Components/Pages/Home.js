@@ -4,12 +4,12 @@ import Image from "../Image";
 import CategoryHeader from "../CategoryHeader";
 import CatgegoryDisplay from "../CatgegoryDisplay";
 import { sizecategories, stylecategories } from "../../Model/Category";
+import HeroBanner from "../Banners/HeroBanner";
 
 function Home() {
     return (
         <div className="flex flex-col w-full scroll overflow-y-auto max-w-screen">
-            <Banner text="✈️ Free Delivery on orders over £50! ✈️" />
-            <Image className="w-full mx-auto" url="./Images/banner.png" />
+            <HeroBanner />
             <CategoryHeader text="Shop By Category" />
             <CatgegoryDisplay categories={sizecategories} />
             <Image
