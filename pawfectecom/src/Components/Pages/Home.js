@@ -8,14 +8,11 @@ import HeroBanner from "../Banners/HeroBanner";
 
 function Home() {
     return (
-        <div className="flex flex-col w-full scroll overflow-y-auto max-w-screen py-10">
-            <HeroBanner />
+        <div className="flex flex-col w-full scroll overflow-y-auto max-w-screen pb-10">
+            <HeroBanner colone="primary" coltwo="secondary" />
             <CategoryHeader text="Shop By Category" />
             <CatgegoryDisplay categories={sizecategories} />
-            <Image
-                className="w-full mx-auto"
-                url="./Images/stylecollection.png"
-            />
+            <HeroBanner colone="secondary" coltwo="primary" />
             <CategoryHeader text="Shop By Style" />
             <CatgegoryDisplay categories={stylecategories} />
         </div>

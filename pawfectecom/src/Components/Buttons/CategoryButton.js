@@ -15,7 +15,7 @@ function CategoryButton(props) {
                 <img className="rounded-xl" src={props.info.image}></img>
             </div>
             {
-                <div className="text-center font-bold">
+                <div className="text-center font-bold text-2xl">
                     {props.info.categoryname}
                 </div>
             }
