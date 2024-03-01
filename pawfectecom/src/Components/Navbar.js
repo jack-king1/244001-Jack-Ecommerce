@@ -32,7 +32,7 @@ function Navbar() {
             >
                 <img
                     className="w-12 md:w-28 md:h-28 drop-shadow-lg"
-                    src="/logo.png"
+                    src="Images/logo3.png"
                 ></img>
             </div>
             <div className="flex-1 text-center w-4/5 justify-center items-center">

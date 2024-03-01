@@ -7,26 +7,25 @@ function HeroBanner(props) {
         <div
             className={`flex flex-row min-h-[80vh] bg-gradient-to-b ${props.colone} justify-center`}
         >
-            <div className="flex w-4/5 justify-center items-center">
-                <div className="flex-1 text-6xl flex-col ">
-                    <div className="pb-8">New Arrivals</div>
-                    <div className="font-bold">New 🐈🛏️ </div>
-                    <div className="font-bold">Collections</div>
-                    <div className="font-bold">For your furry friend!</div>
-                    <div className="mt-4">
-                        <button
-                            className={`${props.coltwo} text-white text-3xl w-1/2 p-3 rounded-lg text-left flex items-center justify-between`}
-                        >
-                            Latest Collections <FaArrowRight />
-                        </button>
-                    </div>
+            <div
+                className={`flex flex-col-reverse h-f w-4/5 xl:flex-row ${props.reverse ? "xl:flex-row-reverse" : "xl:flex-row"}`}
+            >
+                <div className="flex-1 flex items-center justify-center">
+                    <img
+                        className="object-contain w-full drop-shadow-2xl md:w-2/3 "
+                        src="Images/herocat.png"
+                    ></img>
                 </div>
-                <div className="flex-1 flex justify-center items-center">
-                    <div className="w-4/5">
-                        <img
-                            className="object-contain drop-shadow-2xl"
-                            src="Images/herocat.png"
-                        ></img>
+                <div
+                    className={`flex-1 text-center text-6xl flex flex-col gap-12 font-bold justify-center md:${props.reverse ? "items-start text-left" : "items-end text-right"}`}
+                >
+                    <div>New Collections</div>
+                    <div>New Collections</div>
+                    <div>For your feline Friend!</div>
+                    <div
+                        className={`${props.coltwo} w-1/2 p-2 text-white rounded-xl text-4xl text-center md:${props.reverse ? "mr-auto" : "ml-auto"} hover:cursor-pointer`}
+                    >
+                        See More
                     </div>
                 </div>
             </div>

@@ -11,10 +11,18 @@ function Home() {
         <div className="flex flex-col w-full scroll overflow-y-auto max-w-screen pb-10">
             <div className="bg-primary"></div>
             <div className="bg-secondary"></div>
-            <HeroBanner colone="from-primary" coltwo="bg-secondary" />
+            <HeroBanner
+                colone="from-primary"
+                coltwo="bg-secondary"
+                reverse={false}
+            />
             <CategoryHeader text="Shop By Category" />
             <CatgegoryDisplay categories={sizecategories} />
-            <HeroBanner colone="from-secondary" coltwo="bg-primary" />
+            <HeroBanner
+                colone="from-secondary"
+                coltwo="bg-primary"
+                reverse={true}
+            />
             <CategoryHeader text="Shop By Style" />
             <CatgegoryDisplay categories={stylecategories} />
         </div>
