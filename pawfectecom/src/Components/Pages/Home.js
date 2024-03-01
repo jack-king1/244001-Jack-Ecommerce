@@ -9,10 +9,12 @@ import HeroBanner from "../Banners/HeroBanner";
 function Home() {
     return (
         <div className="flex flex-col w-full scroll overflow-y-auto max-w-screen pb-10">
-            <HeroBanner colone="primary" coltwo="secondary" />
+            <div className="bg-primary"></div>
+            <div className="bg-secondary"></div>
+            <HeroBanner colone="from-primary" coltwo="bg-secondary" />
             <CategoryHeader text="Shop By Category" />
             <CatgegoryDisplay categories={sizecategories} />
-            <HeroBanner colone="secondary" coltwo="primary" />
+            <HeroBanner colone="from-secondary" coltwo="bg-primary" />
             <CategoryHeader text="Shop By Style" />
             <CatgegoryDisplay categories={stylecategories} />
         </div>

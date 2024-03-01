@@ -9,7 +9,7 @@ function CategoryButton(props) {
             onClick={() => {
                 navigate("/products");
             }}
-            className="hover:scale-[110%] hover:cursor-pointer transition-all"
+            className="hover:scale-[105%] hover:cursor-pointer transition-all"
         >
             <div className="h-20 w-20 md:h-64 md:w-64 rounded-xl">
                 <img className="rounded-xl" src={props.info.image}></img>
