@@ -11,7 +11,7 @@ function CategoryButton(props) {
             }}
             className="hover:scale-[105%] hover:cursor-pointer transition-all"
         >
-            <div className="h-20 w-20 md:h-64 md:w-64 rounded-xl">
+            <div className="h-40 w-40 md:h-64 md:w-64 rounded-xl">
                 <img className="rounded-xl" src={props.info.image}></img>
             </div>
             {
