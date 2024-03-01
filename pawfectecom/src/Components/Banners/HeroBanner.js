@@ -19,13 +19,14 @@ function HeroBanner(props) {
                 <div
                     className={`flex-1 text-center text-6xl flex flex-col gap-12 font-bold justify-center md:${props.reverse ? "items-start text-left" : "items-end text-right"}`}
                 >
-                    <div>New Collections</div>
-                    <div>New Collections</div>
-                    <div>For your feline Friend!</div>
+                    <div className="text-8xl text-center">Spring Sale!</div>
+                    <div className="flex flex-row gap-4 items-baseline">
+                        <div className="text-8xl text-secondary">50%</div> OFF
+                    </div>
                     <div
-                        className={`${props.coltwo} w-1/2 p-2 text-white rounded-xl text-4xl text-center md:${props.reverse ? "mr-auto" : "ml-auto"} hover:cursor-pointer`}
+                        className={`${props.coltwo} w-full md:w-1/2 p-8 text-white rounded-xl text-6xl text-center md:${props.reverse ? "mr-auto" : "ml-auto"} hover:cursor-pointer`}
                     >
-                        See More
+                        Buy Now
                     </div>
                 </div>
             </div>
