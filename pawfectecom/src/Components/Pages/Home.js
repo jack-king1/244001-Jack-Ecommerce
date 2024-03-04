@@ -20,7 +20,7 @@ function Home() {
             <CatgegoryDisplay categories={sizecategories} />
             <HeroBanner
                 colone="from-secondary"
-                coltwo="bg-primary"
+                coltwo="bg-secondary"
                 reverse={true}
             />
             <CategoryHeader text="Shop By Style" />

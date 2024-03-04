@@ -24,7 +24,7 @@ function Navbar() {
     }
 
     return (
-        <div className="flex flex-row justify-between px-4 py-3 items-center border border-b-primary border-b-4 relative">
+        <div className="flex flex-row justify-between px-4 py-3 items-center border-b-4 relative">
             <SlideInAlert />
             <div
                 onClick={() => navigate("/")}

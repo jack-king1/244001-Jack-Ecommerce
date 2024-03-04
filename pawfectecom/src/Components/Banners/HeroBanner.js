@@ -5,7 +5,7 @@ import { FaArrowRight } from "react-icons/fa6";
 function HeroBanner(props) {
     return (
         <div
-            className={`flex flex-row min-h-[80vh] bg-gradient-to-b ${props.colone} justify-center`}
+            className={`flex flex-row min-h-[80vh] bg-gradient-to-b ${props.colone} from-cyan-500 to-blue-500 justify-center`}
         >
             <div
                 className={`flex flex-col-reverse h-f w-4/5 xl:flex-row ${props.reverse ? "xl:flex-row-reverse" : "xl:flex-row"}`}
