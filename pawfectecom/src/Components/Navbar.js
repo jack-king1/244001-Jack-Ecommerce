@@ -24,7 +24,7 @@ function Navbar() {
     }
 
     return (
-        <div className="flex flex-row justify-between px-4 py-3 items-center border-b-4 relative">
+        <div className="flex flex-row justify-between px-4 py-3 items-center border-b-4 relative max-w-screen">
             <SlideInAlert />
             <div
                 onClick={() => navigate("/")}
@@ -36,11 +36,19 @@ function Navbar() {
                 ></img>
             </div>
             <div className="flex-1 text-center w-4/5 justify-center items-center">
-                <div className="flex flex-row justify-center items-center w-full">
-                    <input
-                        className="px-2 rounded-xl border border-black h-1/2 text-sm md:text-lg md:w-1/2"
-                        placeholder="Search..."
-                    ></input>
+                <div className="flex flex-wrap flex-row justify-center items-center w-full text-sm md:text-2xl gap-3">
+                    <div className="hover:scale-105 cursor-pointer transition-all hover:border-b-primary hover:border-b-4">
+                        Flat
+                    </div>
+                    <div className=" hover:scale-105 cursor-pointer transition-all hover:border-b-primary hover:border-b-4">
+                        Cave
+                    </div>
+                    <div className="hover:scale-105 cursor-pointer transition-all hover:border-b-primary hover:border-b-4">
+                        Donut
+                    </div>
+                    <div className="hover:scale-105 cursor-pointer transition-all hover:border-b-primary hover:border-b-4">
+                        Window
+                    </div>
                 </div>
             </div>
             <div className="flex flex-row gap-4 items-center">
@@ -59,8 +67,6 @@ function Navbar() {
                         </div>
                     ) : null}
                 </div>
-
-                <FaBars className="text-black cursor-pointer md:hidden" />
             </div>
         </div>
     );
