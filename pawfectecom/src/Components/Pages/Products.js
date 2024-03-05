@@ -1,14 +1,16 @@
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../Contexts/UserProvider";
 import { allproducts } from "../../Model/Product";
-import { useSearchParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import { RoundToTwoDecimal } from "../../Model/HelperFunctions";
 import { useNavigate } from "react-router-dom";
 import ProductCategoriesBar from "../ProductCategoriesBar";
+import { useLocation } from "react-router-dom";
 
 //layout inspo https://www.harrys.com/en/gb/products/dynamic-skin-care-duo/?selected=12331922
 function Products() {
     const userContext = useContext(UserContext);
+    const location = useLocation();
     const [products, setProducts] = useState([]);
     const navigate = useNavigate();
     useEffect(() => {
@@ -16,6 +18,11 @@ function Products() {
         //the filtering would happen before the results are retrieved to save api calls.
         setProducts(allproducts);
     }, []);
+
+    useEffect(() => {
+        console.log("Selected Category: ", location);
+        filterProducts(location.state.category);
+    }, [location]);
 
     function filterProducts(type) {
         function checkType(product) {

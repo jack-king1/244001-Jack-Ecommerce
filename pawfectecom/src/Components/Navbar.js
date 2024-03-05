@@ -6,6 +6,7 @@ import { FaCaretDown } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../Contexts/UserProvider";
 import SlideInAlert from "./Alerts/SlideInAlert";
+import { stylecategories } from "../Model/Category";
 
 function Navbar() {
     const navigate = useNavigate();
@@ -37,18 +38,22 @@ function Navbar() {
             </div>
             <div className="flex-1 text-center w-4/5 justify-center items-center">
                 <div className="flex flex-wrap flex-row justify-center items-center w-full text-sm md:text-2xl gap-3">
-                    <div className="hover:scale-105 cursor-pointer transition-all hover:border-b-primary hover:border-b-4">
-                        Flat
-                    </div>
-                    <div className=" hover:scale-105 cursor-pointer transition-all hover:border-b-primary hover:border-b-4">
-                        Cave
-                    </div>
-                    <div className="hover:scale-105 cursor-pointer transition-all hover:border-b-primary hover:border-b-4">
-                        Donut
-                    </div>
-                    <div className="hover:scale-105 cursor-pointer transition-all hover:border-b-primary hover:border-b-4">
-                        Window
-                    </div>
+                    {stylecategories.map((category, index) => {
+                        return (
+                            <div
+                                onClick={() => {
+                                    navigate("/products", {
+                                        state: {
+                                            category: parseInt(category.type),
+                                        },
+                                    });
+                                }}
+                                className="hover:scale-105 cursor-pointer transition-all hover:border-b-primary hover:border-b-4"
+                            >
+                                {category.categoryname}
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
             <div className="flex flex-row gap-4 items-center">

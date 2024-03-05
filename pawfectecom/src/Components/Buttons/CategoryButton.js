@@ -3,11 +3,12 @@ import { useNavigate } from "react-router-dom";
 
 function CategoryButton(props) {
     const navigate = useNavigate();
+    console.log(props);
     return (
         <div
             //  Create a category button component here
             onClick={() => {
-                navigate("/products");
+                navigate("/products", { state: { category: props.info.type } });
             }}
             className="hover:scale-[105%] hover:cursor-pointer transition-all"
         >
