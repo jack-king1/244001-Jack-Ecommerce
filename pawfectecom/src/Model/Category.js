@@ -7,42 +7,39 @@ export class Category {
     }
 }
 
-export const STYLE_TYPE = {
+export const CATEGORY_TYPE = {
     DONUT: 0,
     FLAT: 1,
     CAVE: 2,
     WINDOW: 3,
-};
-
-export const SIZE_TYPE = {
-    SMALL: 0,
-    MEDIUM: 1,
-    LARGE: 2,
-    XLARGE: 3,
+    SMALL: 4,
+    MEDIUM: 5,
+    LARGE: 6,
+    XLARGE: 7,
 };
 
 const sizecategories = [
     new Category(
         "Small",
-        SIZE_TYPE.SMALL,
+        CATEGORY_TYPE.SMALL,
         "Small beds for your adorabable kitten!",
         "./Images/smallcategory1.png"
     ),
     new Category(
         "Medium",
-        SIZE_TYPE.MEDIUM,
+        CATEGORY_TYPE.MEDIUM,
         "Small beds for your adorabable kitten!",
         "./Images/mediumcategory1.png"
     ),
     new Category(
         "Large",
-        SIZE_TYPE.LARGE,
+        CATEGORY_TYPE.LARGE,
         "Small beds for your adorabable kitten!",
         "./Images/largecategory1.png"
     ),
     new Category(
         "Extra Large",
-        SIZE_TYPE.XLARGE,
+        CATEGORY_TYPE.XLARGE,
         "Small beds for your adorabable kitten!",
         "./Images/xlargecategory1.png"
     ),
@@ -51,25 +48,25 @@ const sizecategories = [
 const stylecategories = [
     new Category(
         "Flat",
-        STYLE_TYPE.FLAT,
+        CATEGORY_TYPE.FLAT,
         "Small beds for your adorabable kitten!",
         "./Images/flatstyle.png"
     ),
     new Category(
         "Cave",
-        STYLE_TYPE.CAVE,
+        CATEGORY_TYPE.CAVE,
         "Small beds for your adorabable kitten!",
         "./Images/cavestyle.png"
     ),
     new Category(
         "Donut",
-        STYLE_TYPE.DONUT,
+        CATEGORY_TYPE.DONUT,
         "Small beds for your adorabable kitten!",
         "./Images/donutstyle.png"
     ),
     new Category(
         "Window",
-        STYLE_TYPE.WINDOW,
+        CATEGORY_TYPE.WINDOW,
         "Small beds for your adorabable kitten!",
         "./Images/windowstyle.png"
     ),
