@@ -8,14 +8,14 @@ export class Category {
 }
 
 export const CATEGORY_TYPE = {
-    DONUT: 0,
-    FLAT: 1,
-    CAVE: 2,
-    WINDOW: 3,
-    SMALL: 4,
-    MEDIUM: 5,
-    LARGE: 6,
-    XLARGE: 7,
+    DONUT: 1,
+    FLAT: 2,
+    CAVE: 3,
+    WINDOW: 4,
+    SMALL: 5,
+    MEDIUM: 6,
+    LARGE: 7,
+    XLARGE: 8,
 };
 
 const sizecategories = [
