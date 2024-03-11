@@ -1,4 +1,4 @@
-import { SIZE_TYPE, STYLE_TYPE } from "./Category";
+import { CATEGORY_TYPE } from "./Category";
 import { RoundToTwoDecimal } from "./HelperFunctions";
 const Decimal = require("decimal.js");
 export class Product {
@@ -55,8 +55,8 @@ export class Product {
 const allproducts = [
     new Product(
         0,
-        SIZE_TYPE.SMALL,
-        STYLE_TYPE.FLAT,
+        CATEGORY_TYPE.SMALL,
+        CATEGORY_TYPE.FLAT,
         "Basic Flat Bed",
         "a flat bed perfect for any cat and place!",
         "/Images/Products/catbedtest.png",
@@ -71,8 +71,8 @@ const allproducts = [
     ),
     new Product(
         1,
-        SIZE_TYPE.MEDIUM,
-        STYLE_TYPE.CAVE,
+        CATEGORY_TYPE.MEDIUM,
+        CATEGORY_TYPE.CAVE,
         "Paw Cave Bed",
         "a round bed ideal for larger cats and luxurious comfort!",
         "/Images/Products/bedcave.jpg",
@@ -87,8 +87,8 @@ const allproducts = [
     ),
     new Product(
         2,
-        SIZE_TYPE.MEDIUM,
-        STYLE_TYPE.CAVE,
+        CATEGORY_TYPE.MEDIUM,
+        CATEGORY_TYPE.CAVE,
         "Deluxe Cave Cat Bed",
         "a sleek flat bed designed for small spaces and cozy naps!",
         "/Images/Products/boxbed.jpg",
@@ -103,8 +103,8 @@ const allproducts = [
     ),
     new Product(
         3,
-        SIZE_TYPE.LARGE,
-        STYLE_TYPE.DONUT,
+        CATEGORY_TYPE.LARGE,
+        CATEGORY_TYPE.DONUT,
         "Round Cat Bed",
         "a stylish round bed perfect for pampering your feline friend!",
         "/Images/Products/catbed2.png",
@@ -135,8 +135,8 @@ const allproducts = [
     ),
     new Product(
         5,
-        SIZE_TYPE.LARGE,
-        STYLE_TYPE.DONUT,
+        CATEGORY_TYPE.LARGE,
+        CATEGORY_TYPE.DONUT,
         "Oval Cave bed",
         "an opulent round bed that spells luxury for your cat's naptime!",
         "/Images/Products/catcave.jpg",
@@ -151,8 +151,8 @@ const allproducts = [
     ),
     new Product(
         6,
-        SIZE_TYPE.SMALL,
-        STYLE_TYPE.FLAT,
+        CATEGORY_TYPE.SMALL,
+        CATEGORY_TYPE.FLAT,
         "Compact Flat Bed",
         "a space-saving flat bed suitable for compact living spaces!",
         "/Images/Products/circlebed.jpg",
@@ -167,8 +167,8 @@ const allproducts = [
     ),
     new Product(
         7,
-        SIZE_TYPE.LARGE,
-        STYLE_TYPE.WINDOW,
+        CATEGORY_TYPE.LARGE,
+        CATEGORY_TYPE.WINDOW,
         "Hanging Window Bed",
         "a plush round bed providing ultimate comfort for your cat's nap!",
         "/Images/Products/windowhammockbed.jpg",
@@ -183,8 +183,8 @@ const allproducts = [
     ),
     new Product(
         8,
-        SIZE_TYPE.SMALL,
-        STYLE_TYPE.FLAT,
+        CATEGORY_TYPE.SMALL,
+        CATEGORY_TYPE.FLAT,
         "Soft Tunnel Bed",
         "a chic flat bed that complements modern home decor!",
         "/Images/Products/tunnelbed.jpg",
@@ -199,8 +199,8 @@ const allproducts = [
     ),
     new Product(
         9,
-        SIZE_TYPE.SMALL,
-        STYLE_TYPE.DONUT,
+        CATEGORY_TYPE.SMALL,
+        CATEGORY_TYPE.DONUT,
         "Spotty Bed",
         "a glamorous round bed for cats who appreciate a touch of elegance!",
         "/Images/Products/spottybed.jpg",
@@ -215,8 +215,8 @@ const allproducts = [
     ),
     new Product(
         10,
-        SIZE_TYPE.SMALL,
-        STYLE_TYPE.CAVE,
+        CATEGORY_TYPE.SMALL,
+        CATEGORY_TYPE.CAVE,
         "Chic Cave Bed",
         "a chic flat bed that complements modern home decor!",
         "/Images/Products/babybed.jpg",
@@ -231,8 +231,8 @@ const allproducts = [
     ),
     new Product(
         11,
-        SIZE_TYPE.XLARGE,
-        STYLE_TYPE.WINDOW,
+        CATEGORY_TYPE.XLARGE,
+        CATEGORY_TYPE.WINDOW,
         "Cannopy Bed",
         "a glamorous round bed for cats who appreciate a touch of elegance!",
         "/Images/Products/canopybed.jpg",
