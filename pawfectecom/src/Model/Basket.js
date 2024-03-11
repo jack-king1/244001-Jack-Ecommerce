@@ -30,7 +30,6 @@ export default class Basket {
             console.log("Checkout list: ", item.product.GetPrice());
             totalCost += RoundToTwoDecimal(item.product.GetPrice() * item.qty);
         });
-
         return parseFloat(totalCost).toFixed(2);
     }
 
