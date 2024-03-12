@@ -25,6 +25,33 @@ export class Product {
     }
 
     /**
+     * Unit test - tests GetPrice function to see if it returns correct values.
+     * @param {*} expectedOutcome
+     * @param {*} onSale
+     */
+    GetPriceUnitTest(expectedOutcome, onSale) {
+        this.onSale = onSale;
+        let testPrice = this.GetPrice();
+        console.log("ProductPrice Unit Test: ", testPrice);
+        console.assert(
+            testPrice == expectedOutcome,
+            "Unit Test Failed, GetPrice did not resolve in expected outcome."
+        );
+    }
+
+    /**
+     * Test the return type of GetPrice and checks to see if its of type number.
+     * @param {*} expectedOutcome
+     */
+    GetTypeOfPriceUnitTest(expectedOutcome) {
+        let typeOf = typeof this.GetPrice();
+        console.assert(
+            typeOf == expectedOutcome,
+            "Expected outcome was invalid type. Should be number"
+        );
+    }
+
+    /**
      * returns price for sale or non sale to 2 decimal places floored.
      * @returns price
      */

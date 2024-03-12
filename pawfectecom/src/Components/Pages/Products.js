@@ -20,7 +20,7 @@ function Products() {
     }, []);
 
     useEffect(() => {
-        console.log("Selected Category: ", location);
+        //console.log("Selected Category: ", location);
         filterProducts(location.state.category);
     }, [location]);
 
@@ -29,7 +29,7 @@ function Products() {
             return product.category == type;
         }
         const result = allproducts.filter(checkType);
-        console.log("Filtered: ", result);
+        //console.log("Filtered: ", result);
         setProducts(result);
     }
 

@@ -36,7 +36,7 @@ export default class Basket {
 
     //Unit Tests
     //Test to se if output is a number and not any other type.
-    CalculateTotalAbsTestTwo() {
+    CalculateTotalTypeOfUnitTest() {
         let expectedOutput = "number";
         let productList = [{ product: unitTestProduct, qty: 3 }];
         let total = this.CalculateTotal(productList);
@@ -50,7 +50,7 @@ export default class Basket {
     /**
      * Calculate
      */
-    CalculateTotalTestOne() {
+    CalculateTotalPriceUnitTest() {
         let expectedTotal = 300;
         let productList = [{ product: unitTestProduct, qty: 3 }];
         let total = this.CalculateTotal(productList);
@@ -58,7 +58,7 @@ export default class Basket {
             expectedTotal == total,
             "Error! Calculation not working!"
         );
-        this.CalculateTotalAbsTestTwo();
+        this.CalculateTotalTypeOfUnitTest();
     }
 
     /**

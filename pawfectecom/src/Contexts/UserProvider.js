@@ -11,12 +11,12 @@ function UserProvider({ children }) {
 
     useEffect(() => {
         console.log("User basket updated: ", userBasket);
-        userBasket.CalculateTotalTestOne();
+        userBasket.CalculateTotalPriceUnitTest();
     }, [userBasket]);
 
-    useEffect(() => {
-        console.log("Event Listeners: ", eventListeners);
-    }, [eventListeners]);
+    // useEffect(() => {
+    //     console.log("Event Listeners: ", eventListeners);
+    // }, [eventListeners]);
 
     // Function to subscribe to an event
     const subscribe = (eventName, callback) => {

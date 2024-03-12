@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 
 function CategoryButton(props) {
     const navigate = useNavigate();
-    console.log(props);
     return (
         <div
             //  Create a category button component here
