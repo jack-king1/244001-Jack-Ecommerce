@@ -1,5 +1,7 @@
 import { useContext, useEffect, useState, createContext } from "react";
 import Basket from "../Model/Basket";
+import { Product } from "../Model/Product";
+import { unitTestProduct } from "../Model/Product";
 
 export const UserContext = createContext();
 
@@ -8,6 +10,13 @@ function UserProvider({ children }) {
     const [userBasket, setUserBasket] = useState(new Basket());
     const [loggedIn, setLoggedIn] = useState(false);
     const [eventListeners, setEventListeners] = useState({});
+
+    //trigger unit tests.
+    useEffect(() => {
+        unitTestProduct.GetPriceUnitTest(50.0, true);
+        unitTestProduct.GetTypeOfPriceUnitTest("number");
+        userBasket.CalculateTotalPriceUnitTest();
+    }, []);
 
     useEffect(() => {
         console.log("User basket updated: ", userBasket);

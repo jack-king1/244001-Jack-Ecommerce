@@ -30,7 +30,10 @@ export default class Basket {
             console.log("Checkout list: ", item.product.GetPrice());
             totalCost += RoundToTwoDecimal(item.product.GetPrice() * item.qty);
         });
-        return parseFloat(totalCost).toFixed(2);
+        totalCost = parseFloat(totalCost).toFixed(2);
+
+        //reparse to float here as .toFixed returns a string type.
+        return parseFloat(totalCost);
     }
 
     //Unit Tests
@@ -57,7 +60,6 @@ export default class Basket {
             expectedTotal == total,
             "Error! Calculation not working!"
         );
-        this.CalculateTotalTypeOfUnitTest();
     }
 
     /**
