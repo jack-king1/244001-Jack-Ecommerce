@@ -1,3 +1,4 @@
+//const sql = require("mssql");
 const sql = require("mssql");
 const express = require("express");
 const app = express();
@@ -20,6 +21,10 @@ const sqlConfig = {
         trustServerCertificate: true,
     },
 };
+
+sql.connect(sqlConfig, function (err) {
+    if (err) console.log(err);
+});
 
 app.get("/", (req, res) => {
     res.send("Default root found!");
