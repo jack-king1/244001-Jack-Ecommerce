@@ -99,29 +99,80 @@ app.get("/countries/:countryId", async (req, res) => {
     }
 });
 
+//post data to database
 app.post("/newproduct", async (req, res) => {
+    console.log("@newproduct post");
     try {
-        const productname = req.body.productname;
-        const productdesc = req.body.productdesc;
-        const price = req.body.price;
-        const sizeid = req.body.sizeid;
-        const typeid = req.body.typeid;
+        const productName = req.body.productname;
+        const productDesc = req.body.productdesc;
+        const localprice = req.body.price;
+        const localsizeid = req.body.sizeid;
+        const localtypeid = req.body.typeid;
 
         await sql.connect(sqlConfig);
         let request = new sql.Request();
-        request.input("productname", sql.VarChar, productname);
-        request.input("productname", sql.VarChar, productdesc);
-        request.input("price", sql.Decimal, price);
-        request.input("sizeid", sql.Int, sizeid);
-        request.input("typeid", sql.Int, typeid);
+        request.input("productname", sql.VarChar, productName);
+        request.input("productdesc", sql.VarChar, productDesc);
+        request.input("price", sql.Decimal, localprice);
+        request.input("sizeid", sql.Int, localsizeid);
+        request.input("typeid", sql.Int, localtypeid);
 
         const query =
-            "INSERT INTO Products VALUES (@productname, @productname, @price ,@sizeid, @typeid);";
+            "INSERT INTO Products VALUES (@productname, @productdesc, @price ,@sizeid, @typeid);";
         const result = await request.query(query);
         res.json(result);
     } catch (err) {
         console.log(err);
         res.send(err);
+    }
+});
+
+//fetch all products as json to display on prodyct page.
+app.get("/products", async (req, res) => {
+    try {
+        await sql.connect(sqlConfig);
+        let request = new sql.Request();
+        const query =
+            "SELECT * FROM Products JOIN ProductImages on product_id = ProductImages.fk_product_id JOIN OnSale on product_id = OnSale.fk_product_id";
+        const result = await request.query(query);
+        res.json(result);
+    } catch (err) {
+        console.log(err);
+        res.status(500);
+    }
+});
+
+//get all relevant product data where product id matches and filter the rows for selected id.
+app.get("/products/:productid", async (req, res) => {
+    const selectedproductid = req.params.productid;
+    try {
+        await sql.connect(sqlConfig);
+        let request = new sql.Request();
+        request.input("productid", sql.VarChar, selectedproductid);
+        const query =
+            "SELECT * FROM Products JOIN ProductImages on product_id = ProductImages.fk_product_id JOIN OnSale on product_id = OnSale.fk_product_id WHERE product_id = @productid";
+        const result = await request.query(query);
+        res.json(result);
+    } catch (err) {
+        console.log(err);
+        res.status(500);
+    }
+});
+
+//get product highlights as a seperate table.
+app.get("/products/:productid/highlights", async (req, res) => {
+    const selectedproductid = req.params.productid;
+    try {
+        await sql.connect(sqlConfig);
+        let request = new sql.Request();
+        request.input("productid", sql.VarChar, selectedproductid);
+        const query =
+            "SELECT * FROM Highlights WHERE fk_product_id = @productid";
+        const result = await request.query(query);
+        res.json(result);
+    } catch (err) {
+        console.log(err);
+        res.status(500);
     }
 });
 
