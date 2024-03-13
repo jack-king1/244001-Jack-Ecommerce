@@ -17,7 +17,7 @@ function ProductProvider({ children }) {
             console.log(prods);
             setProducts(prods);
         }
-        LoadProducts();
+        //LoadProducts();
     }, []);
 
     useEffect(() => {

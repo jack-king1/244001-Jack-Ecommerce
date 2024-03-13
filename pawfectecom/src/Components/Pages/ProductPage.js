@@ -14,59 +14,59 @@ import { Product } from "../../Model/Product";
 function ProductPage() {
     const userContext = useContext(UserContext);
     const { height, width } = useWindowDimensions();
-    const [product, setProduct] = useState([]);
+    const [product, setProduct] = useState();
     const [quantity, setQuantity] = useState(1);
     const params = useParams();
     const [highlights, setHighlights] = useState([]);
 
-    useEffect(() => {
-        fetch(`http://localhost:3001/products/${params.id}/highlights`)
-            .then((response) => response.json())
-            .then((data) => {
-                let arrayHighlights = [];
-                for (let highlight of data.recordset) {
-                    console.log("New Highlight: ", highlight.highlight_text);
-                    arrayHighlights.push(highlight.highlight_text);
-                }
-            });
-    }, [product]);
+    // useEffect(() => {
+    //     fetch(`http://localhost:3001/products/${params.id}/highlights`)
+    //         .then((response) => response.json())
+    //         .then((data) => {
+    //             let arrayHighlights = [];
+    //             for (let highlight of data.recordset) {
+    //                 console.log("New Highlight: ", highlight.highlight_text);
+    //                 arrayHighlights.push(highlight.highlight_text);
+    //             }
+    //         });
+    // }, [product]);
 
     useEffect(() => {
         console.log(params);
-        //setProduct(SelectProduct(params.id));
-        console.log("fetching data");
-        //fetch data for product and highlights
-        try {
-            fetch(`http://localhost:3001/products/${params.id}`)
-                .then((response) => response.json())
-                .then((data) => {
-                    console.log("product data: ", data);
-                    let productid = data.recordset[0].product_id;
-                    let productname = data.recordset[0].product_name;
-                    let productprice = data.recordset[0].price;
-                    let productondesc = data.recordset[0].product_desc;
-                    let salepercentage = data.recordset[0].sale_percentage;
-                    let sizeid = data.recordset[0].fk_category_size_id;
-                    let typeid = data.recordset[0].fk_category_type_id;
-                    let productimage = "/Images/Products/canopybed.jpg";
-                    let onSale = salepercentage > 0.01;
-                    let newproduct = new Product(
-                        productid,
-                        sizeid,
-                        typeid,
-                        productname,
-                        productondesc,
-                        productimage,
-                        productprice,
-                        onSale,
-                        []
-                    );
-                    setProduct(newproduct);
-                    console.log(newproduct);
-                });
-        } catch (err) {
-            console.log(err);
-        }
+        setProduct(SelectProduct(params.id));
+        // console.log("fetching data");
+        // //fetch data for product and highlights
+        // try {
+        //     fetch(`http://localhost:3001/products/${params.id}`)
+        //         .then((response) => response.json())
+        //         .then((data) => {
+        //             console.log("product data: ", data);
+        //             let productid = data.recordset[0].product_id;
+        //             let productname = data.recordset[0].product_name;
+        //             let productprice = data.recordset[0].price;
+        //             let productondesc = data.recordset[0].product_desc;
+        //             let salepercentage = data.recordset[0].sale_percentage;
+        //             let sizeid = data.recordset[0].fk_category_size_id;
+        //             let typeid = data.recordset[0].fk_category_type_id;
+        //             let productimage = "/Images/Products/canopybed.jpg";
+        //             let onSale = salepercentage > 0.01;
+        //             let newproduct = new Product(
+        //                 productid,
+        //                 sizeid,
+        //                 typeid,
+        //                 productname,
+        //                 productondesc,
+        //                 productimage,
+        //                 productprice,
+        //                 onSale,
+        //                 []
+        //             );
+        //             setProduct(newproduct);
+        //             console.log(newproduct);
+        //         });
+        // } catch (err) {
+        //     console.log(err);
+        // }
 
         //fetch highlight data for product
     }, []);
