@@ -6,17 +6,69 @@ import { AiOutlineSafety } from "react-icons/ai";
 import { FaTruck } from "react-icons/fa";
 import { RoundToTwoDecimal } from "../../Model/HelperFunctions";
 import { useParams } from "react-router";
+import { getProduct } from "../../API/AzureAPI";
+import { getProductHighlights } from "../../API/AzureAPI";
+import { getProducts } from "../../API/AzureAPI";
+import { Product } from "../../Model/Product";
 
 function ProductPage() {
     const userContext = useContext(UserContext);
     const { height, width } = useWindowDimensions();
-    const [product, setProduct] = useState(testProduct);
+    const [product, setProduct] = useState([]);
     const [quantity, setQuantity] = useState(1);
     const params = useParams();
+    const [highlights, setHighlights] = useState([]);
+
+    useEffect(() => {
+        fetch(`http://localhost:3001/products/${params.id}/highlights`)
+            .then((response) => response.json())
+            .then((data) => {
+                let arrayHighlights = [];
+                for (let highlight of data.recordset) {
+                    console.log("New Highlight: ", highlight.highlight_text);
+                    arrayHighlights.push(highlight.highlight_text);
+                }
+            });
+    }, [product]);
 
     useEffect(() => {
         console.log(params);
-        setProduct(SelectProduct(params.id));
+        //setProduct(SelectProduct(params.id));
+        console.log("fetching data");
+        //fetch data for product and highlights
+        try {
+            fetch(`http://localhost:3001/products/${params.id}`)
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log("product data: ", data);
+                    let productid = data.recordset[0].product_id;
+                    let productname = data.recordset[0].product_name;
+                    let productprice = data.recordset[0].price;
+                    let productondesc = data.recordset[0].product_desc;
+                    let salepercentage = data.recordset[0].sale_percentage;
+                    let sizeid = data.recordset[0].fk_category_size_id;
+                    let typeid = data.recordset[0].fk_category_type_id;
+                    let productimage = "/Images/Products/canopybed.jpg";
+                    let onSale = salepercentage > 0.01;
+                    let newproduct = new Product(
+                        productid,
+                        sizeid,
+                        typeid,
+                        productname,
+                        productondesc,
+                        productimage,
+                        productprice,
+                        onSale,
+                        []
+                    );
+                    setProduct(newproduct);
+                    console.log(newproduct);
+                });
+        } catch (err) {
+            console.log(err);
+        }
+
+        //fetch highlight data for product
     }, []);
 
     function BuySection() {
@@ -95,7 +147,7 @@ function ProductPage() {
                 <div className="text-xl">Why your cat will love it</div>
                 <div>
                     <ul className="list-disc mt-2">
-                        {product.highlights.map((item, index) => {
+                        {highlights.map((item, index) => {
                             return (
                                 <li key={index} className="ml-6">
                                     {item}
@@ -171,7 +223,18 @@ function ProductPage() {
 
     return (
         <div className="flex flex-col items-center h-screen w-full md:flex-row mt-8 md:justify-center md:items-start">
-            {width < 768 ? MobileLayout() : DesktopLayout()}
+            {product != null ? (
+                width < 768 ? (
+                    MobileLayout()
+                ) : (
+                    DesktopLayout()
+                )
+            ) : (
+                <svg
+                    class="animate-spin h-5 w-5 mr-3"
+                    viewBox="0 0 24 24"
+                ></svg>
+            )}
         </div>
     );
 }

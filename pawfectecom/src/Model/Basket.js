@@ -54,7 +54,11 @@ export default class Basket {
      */
     CalculateTotalPriceUnitTest() {
         let expectedTotal = 300;
-        let productList = [{ product: unitTestProduct, qty: 3 }];
+        let productList = [
+            { product: unitTestProduct, qty: 1 },
+            { product: unitTestProduct, qty: 1 },
+            { product: unitTestProduct, qty: 1 },
+        ];
         let total = this.CalculateTotal(productList);
         console.assert(
             expectedTotal == total,

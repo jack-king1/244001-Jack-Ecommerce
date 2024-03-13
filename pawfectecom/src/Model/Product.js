@@ -81,7 +81,7 @@ export class Product {
 
 const allproducts = [
     new Product(
-        0,
+        1,
         CATEGORY_TYPE.SMALL,
         CATEGORY_TYPE.FLAT,
         "Basic Flat Bed",
@@ -97,7 +97,7 @@ const allproducts = [
         ]
     ),
     new Product(
-        1,
+        2,
         CATEGORY_TYPE.MEDIUM,
         CATEGORY_TYPE.CAVE,
         "Paw Cave Bed",
@@ -113,7 +113,7 @@ const allproducts = [
         ]
     ),
     new Product(
-        2,
+        3,
         CATEGORY_TYPE.MEDIUM,
         CATEGORY_TYPE.CAVE,
         "Deluxe Cave Cat Bed",
@@ -129,7 +129,7 @@ const allproducts = [
         ]
     ),
     new Product(
-        3,
+        4,
         CATEGORY_TYPE.LARGE,
         CATEGORY_TYPE.DONUT,
         "Round Cat Bed",
@@ -145,7 +145,7 @@ const allproducts = [
         ]
     ),
     new Product(
-        4,
+        5,
         "small",
         "flat",
         "Cozy Small Lifted Bed",
@@ -161,7 +161,7 @@ const allproducts = [
         ]
     ),
     new Product(
-        5,
+        6,
         CATEGORY_TYPE.LARGE,
         CATEGORY_TYPE.DONUT,
         "Oval Cave bed",
@@ -177,7 +177,7 @@ const allproducts = [
         ]
     ),
     new Product(
-        6,
+        7,
         CATEGORY_TYPE.SMALL,
         CATEGORY_TYPE.FLAT,
         "Compact Flat Bed",
@@ -193,7 +193,7 @@ const allproducts = [
         ]
     ),
     new Product(
-        7,
+        8,
         CATEGORY_TYPE.LARGE,
         CATEGORY_TYPE.WINDOW,
         "Hanging Window Bed",
@@ -209,7 +209,7 @@ const allproducts = [
         ]
     ),
     new Product(
-        8,
+        9,
         CATEGORY_TYPE.SMALL,
         CATEGORY_TYPE.FLAT,
         "Soft Tunnel Bed",
@@ -225,7 +225,7 @@ const allproducts = [
         ]
     ),
     new Product(
-        9,
+        10,
         CATEGORY_TYPE.SMALL,
         CATEGORY_TYPE.DONUT,
         "Spotty Bed",
@@ -241,7 +241,7 @@ const allproducts = [
         ]
     ),
     new Product(
-        10,
+        11,
         CATEGORY_TYPE.SMALL,
         CATEGORY_TYPE.CAVE,
         "Chic Cave Bed",
@@ -257,7 +257,7 @@ const allproducts = [
         ]
     ),
     new Product(
-        11,
+        12,
         CATEGORY_TYPE.XLARGE,
         CATEGORY_TYPE.WINDOW,
         "Cannopy Bed",

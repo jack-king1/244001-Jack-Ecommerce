@@ -2,9 +2,11 @@
 const sql = require("mssql");
 const express = require("express");
 const app = express();
-const PORT = 3000;
+const cors = require("cors");
+const PORT = 3001;
 
 app.use(express.json());
+app.use(cors());
 
 const sqlConfig = {
     server: "172.187.184.173",
@@ -145,12 +147,13 @@ app.get("/products", async (req, res) => {
 //get all relevant product data where product id matches and filter the rows for selected id.
 app.get("/products/:productid", async (req, res) => {
     const selectedproductid = req.params.productid;
+    console.log("ProductID: ", selectedproductid);
     try {
         await sql.connect(sqlConfig);
         let request = new sql.Request();
         request.input("productid", sql.VarChar, selectedproductid);
         const query =
-            "SELECT * FROM Products JOIN ProductImages on product_id = ProductImages.fk_product_id JOIN OnSale on product_id = OnSale.fk_product_id WHERE product_id = @productid";
+            "SELECT * FROM Products JOIN ProductImages on product_id = ProductImages.fk_product_id JOIN OnSale on product_id = OnSale.fk_product_id WHERE Products.product_id = @productid";
         const result = await request.query(query);
         res.json(result);
     } catch (err) {
@@ -184,7 +187,9 @@ app.delete("/deleteproduct/:productId", async (req, res) => {
         request.input("productId", sql.Int, productId);
         let query = "DELETE...";
         const result = request.query();
-    } catch (err) {}
+    } catch (err) {
+        console.log(err);
+    }
 });
 
 //Open a connection on port 3000
