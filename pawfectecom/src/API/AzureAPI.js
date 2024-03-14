@@ -13,12 +13,8 @@ export async function getProduct(id) {
     // const response = await fetch(apiURL + `/product/${id}`);
 
     const response = await fetch(`http://localhost:3001/products/${id}`).then(
-        (response) =>
-            response.json().then(() => {
-                //console.log("Fetched Prodcts: ", response);
-            })
+        (response) => response.json()
     );
-
     return response;
 }
 

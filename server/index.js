@@ -147,6 +147,7 @@ app.get("/products/:productid", async (req, res) => {
         const query =
             "SELECT product_id, fk_category_size_id, fk_category_type_id, product_name, product_desc, image_url, price, sale_percentage FROM Products JOIN OnSale on OnSale.fk_product_id = Products.product_id JOIN ProductImages PI on PI.fk_product_id = Products.product_id JOIN Images on Images.image_id = PI.fk_image_id   WHERE Products.product_id = @productid";
         const result = await request.query(query);
+        console.log(result);
         res.json(result);
     } catch (err) {
         console.log(err);

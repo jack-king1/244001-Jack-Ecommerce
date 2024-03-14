@@ -14,15 +14,33 @@ import { Product } from "../../Model/Product";
 function ProductPage() {
     const userContext = useContext(UserContext);
     const { height, width } = useWindowDimensions();
-    const [product, setProduct] = useState();
+    const [product, setProduct] = useState(null);
     const [quantity, setQuantity] = useState(1);
     const params = useParams();
     const [highlights, setHighlights] = useState([]);
 
     useEffect(() => {
         console.log(params);
-        setProduct(SelectProduct(params.id));
+        //setProduct(SelectProduct(params.id));
         //fetch async from db rather than local products
+        async function LoadProduct() {
+            console.log("Loading product id ", params.id);
+            let loadProd = await getProduct(params.id);
+
+            let newProd = new Product(
+                loadProd.recordset[0].product_id,
+                loadProd.recordset[0].fk_category_size_id,
+                loadProd.recordset[0].fk_category_type_id,
+                loadProd.recordset[0].product_name,
+                loadProd.recordset[0].product_desc,
+                loadProd.recordset[0].image_url,
+                loadProd.recordset[0].price,
+                loadProd.recordset[0].sale_percentage > 0
+            );
+            console.log("Product Loaded: ", newProd);
+            setProduct(newProd);
+        }
+        LoadProduct();
     }, []);
 
     function BuySection() {
