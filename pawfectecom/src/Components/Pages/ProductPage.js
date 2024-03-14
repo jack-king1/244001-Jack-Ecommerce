@@ -26,7 +26,12 @@ function ProductPage() {
         async function LoadProduct() {
             console.log("Loading product id ", params.id);
             let loadProd = await getProduct(params.id);
-
+            let loadHighlights = await getProductHighlights(params.id);
+            console.log("Highlights: ", loadHighlights);
+            let newHighlights = [];
+            for (let hl of loadHighlights.recordset) {
+                newHighlights.push(hl.highlight_text);
+            }
             let newProd = new Product(
                 loadProd.recordset[0].product_id,
                 loadProd.recordset[0].fk_category_size_id,
@@ -39,6 +44,7 @@ function ProductPage() {
             );
             console.log("Product Loaded: ", newProd);
             setProduct(newProd);
+            setHighlights(newHighlights);
         }
         LoadProduct();
     }, []);
