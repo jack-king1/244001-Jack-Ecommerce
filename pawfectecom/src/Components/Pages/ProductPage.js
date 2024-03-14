@@ -22,6 +22,7 @@ function ProductPage() {
     useEffect(() => {
         console.log(params);
         setProduct(SelectProduct(params.id));
+        //fetch async from db rather than local products
     }, []);
 
     function BuySection() {

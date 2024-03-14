@@ -16,34 +16,17 @@ function Products() {
     const location = useLocation();
     const [products, setProducts] = useState([]);
     const navigate = useNavigate();
+    const [renderFlag, setRenderFlag] = useState(false);
+
     useEffect(() => {
-        function LoadProductData() {
-            async function LoadAsync() {
-                console.log("@LoadAsync...");
-                let data = await getProducts();
-                console.log("Fetched Data: ", data);
-                let newProductArray = [];
-                for (let newProd of data.recordset) {
-                    console.log("Item: ", newProd);
-                    newProductArray.push(
-                        new Product(
-                            newProd.product_id,
-                            newProd.fk_category_size_id,
-                            newProd.fk_category_type_id,
-                            newProd.product_name,
-                            newProd.product_desc,
-                            newProd.image_url,
-                            newProd.price,
-                            newProd.sale_percentage > 0
-                        )
-                    );
-                }
-                console.log("@NewProductArrayMap: ", newProductArray);
-                setProducts(newProductArray);
-            }
-            LoadAsync();
+        productContext.subscribe("productsLoaded", setProducts);
+    }, []);
+
+    useEffect(() => {
+        console.log("Products set from event: ", products);
+        if (productContext.allProducts != undefined) {
+            setProducts(productContext.allProducts);
         }
-        LoadProductData();
     }, []);
 
     useEffect(() => {
@@ -65,8 +48,6 @@ function Products() {
     function removeFilter() {
         //setProducts(allproducts);
     }
-
-    function RenderProducts() {}
     return (
         <div className="flex flex-col justify-center items-center">
             <ProductCategoriesBar
@@ -75,7 +56,7 @@ function Products() {
             />
             <div className="flex justify-center items-center">
                 <div className="flex text-black grid-cols-2 grid w-full gap-4 m-2 md:w-1/2 md:grid-cols-4">
-                    {productContext.allproducts != null ? (
+                    {products != null ? (
                         products.map((product, index) => {
                             return (
                                 <div
@@ -139,7 +120,7 @@ function Products() {
                             );
                         })
                     ) : (
-                        <div>Loading...</div>
+                        <div className="mx-auto flex-1">Loading...</div>
                     )}
                 </div>
             </div>
