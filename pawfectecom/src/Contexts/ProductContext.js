@@ -7,25 +7,24 @@ import { getProducts } from "../API/AzureAPI";
 export const ProductContext = createContext();
 
 function ProductProvider({ children }) {
-    const [products, setProducts] = useState([]);
+    const [allProducts, setAllProducts] = useState([]);
     const [productsLoaded, setProductsLoaded] = useState(false);
 
     //
     useEffect(() => {
         async function LoadProducts() {
             let prods = await getProducts();
-            console.log(prods);
-            setProducts(prods);
+            setAllProducts(prods.recordsets);
         }
-        //LoadProducts();
+        LoadProducts();
     }, []);
 
     useEffect(() => {
-        console.log("Loaded products", products);
-    }, [products]);
+        console.log("Loaded products", allProducts);
+    }, [allProducts]);
 
     const productContextValue = {
-        products,
+        allproducts: allProducts,
     };
     return (
         <ProductContext.Provider value={productContextValue}>

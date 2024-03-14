@@ -8,11 +8,27 @@ const PORT = 3001;
 app.use(express.json());
 app.use(cors());
 
+// const sqlConfig = {
+//     server: "172.187.184.173",
+//     database: "jackkingEcomDB",
+//     user: "sa",
+//     password: "Cheesecake!1",
+//     pool: {
+//         min: 0,
+//         max: 10,
+//         idleTimeoutMillis: 30000,
+//     },
+//     options: {
+//         encrypt: false,
+//         trustServerCertificate: true,
+//     },
+// };
+
 const sqlConfig = {
-    server: "172.187.184.173",
+    server: "52.151.88.124",
     database: "jackkingEcomDB",
-    user: "sa",
-    password: "Cheesecake!1",
+    user: "jack",
+    password: "password123!!",
     pool: {
         min: 0,
         max: 10,
@@ -26,6 +42,7 @@ const sqlConfig = {
 
 sql.connect(sqlConfig, function (err) {
     if (err) console.log(err);
+    else console.log("Connected!");
 });
 
 app.get("/", (req, res) => {
@@ -102,40 +119,15 @@ app.get("/countries/:countryId", async (req, res) => {
 });
 
 //post data to database
-app.post("/newproduct", async (req, res) => {
-    console.log("@newproduct post");
-    try {
-        const productName = req.body.productname;
-        const productDesc = req.body.productdesc;
-        const localprice = req.body.price;
-        const localsizeid = req.body.sizeid;
-        const localtypeid = req.body.typeid;
-
-        await sql.connect(sqlConfig);
-        let request = new sql.Request();
-        request.input("productname", sql.VarChar, productName);
-        request.input("productdesc", sql.VarChar, productDesc);
-        request.input("price", sql.Decimal, localprice);
-        request.input("sizeid", sql.Int, localsizeid);
-        request.input("typeid", sql.Int, localtypeid);
-
-        const query =
-            "INSERT INTO Products VALUES (@productname, @productdesc, @price ,@sizeid, @typeid);";
-        const result = await request.query(query);
-        res.json(result);
-    } catch (err) {
-        console.log(err);
-        res.send(err);
-    }
-});
 
 //fetch all products as json to display on prodyct page.
 app.get("/products", async (req, res) => {
+    console.log("@/products");
     try {
         await sql.connect(sqlConfig);
         let request = new sql.Request();
         const query =
-            "SELECT * FROM Products JOIN ProductImages on product_id = ProductImages.fk_product_id JOIN OnSale on product_id = OnSale.fk_product_id";
+            "SELECT product_id, fk_category_size_id, fk_category_type_id, product_name, product_desc, image_url, price, sale_percentage FROM Products JOIN OnSale on OnSale.fk_product_id = Products.product_id JOIN ProductImages PI on PI.fk_product_id = Products.product_id JOIN Images on Images.image_id = PI.fk_image_id ";
         const result = await request.query(query);
         res.json(result);
     } catch (err) {
@@ -153,7 +145,7 @@ app.get("/products/:productid", async (req, res) => {
         let request = new sql.Request();
         request.input("productid", sql.VarChar, selectedproductid);
         const query =
-            "SELECT * FROM Products JOIN ProductImages on product_id = ProductImages.fk_product_id JOIN OnSale on product_id = OnSale.fk_product_id WHERE Products.product_id = @productid";
+            "SELECT product_id, fk_category_size_id, fk_category_type_id, product_name, product_desc, image_url, price, sale_percentage FROM Products JOIN OnSale on OnSale.fk_product_id = Products.product_id JOIN ProductImages PI on PI.fk_product_id = Products.product_id JOIN Images on Images.image_id = PI.fk_image_id   WHERE Products.product_id = @productid";
         const result = await request.query(query);
         res.json(result);
     } catch (err) {
