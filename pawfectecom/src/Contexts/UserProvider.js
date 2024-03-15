@@ -18,6 +18,7 @@ function UserProvider({ children }) {
         userBasket.CalculateTotalPriceUnitTest();
     }, []);
 
+    //call unit tests on basket.
     useEffect(() => {
         console.log("User basket updated: ", userBasket);
         userBasket.CalculateTotalPriceUnitTest();
