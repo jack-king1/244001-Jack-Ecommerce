@@ -23,10 +23,6 @@ function UserProvider({ children }) {
         userBasket.CalculateTotalPriceUnitTest();
     }, [userBasket]);
 
-    // useEffect(() => {
-    //     console.log("Event Listeners: ", eventListeners);
-    // }, [eventListeners]);
-
     // Function to subscribe to an event
     const subscribe = (eventName, callback) => {
         setEventListeners((prevListeners) => ({
@@ -44,6 +40,7 @@ function UserProvider({ children }) {
         listeners.forEach((callback) => callback(payload));
     };
 
+    //object that contains al items needed for export params in one place.
     const userContextValue = {
         loggedIn,
         user,

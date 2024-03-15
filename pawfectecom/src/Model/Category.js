@@ -1,3 +1,4 @@
+//category of products, ca=lass will contain all information about a given category.
 export class Category {
     constructor(categoryname, type, description, image) {
         this.categoryname = categoryname;
@@ -7,6 +8,7 @@ export class Category {
     }
 }
 
+//all category types for products, products can have 1 or more of these types.
 export const CATEGORY_TYPE = {
     DONUT: 1,
     FLAT: 2,

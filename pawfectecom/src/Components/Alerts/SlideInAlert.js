@@ -2,14 +2,18 @@ import React, { useEffect } from "react";
 import { useState, useContext } from "react";
 import { UserContext } from "../../Contexts/UserProvider";
 
+//An overlay that subscribes to user events to display messages about messages to cart.
 function SlideInAlert() {
     const [isVisible, setIsVisible] = useState(false);
     const userContext = useContext(UserContext);
     const [message, setMessage] = useState("");
+
+    //subscribe to even inside userContext on mount.
     useEffect(() => {
         userContext.subscribe("basketUpdate", TriggerAnimation);
     }, []);
 
+    //function callback for event trigger.
     function TriggerAnimation(itemAdded) {
         setMessage(itemAdded.message);
         setIsVisible(true);

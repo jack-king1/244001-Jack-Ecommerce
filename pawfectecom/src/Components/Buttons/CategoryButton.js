@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+//a category button that on click will navigate the user to give category e.g. ../LargeProducts
 function CategoryButton(props) {
     const navigate = useNavigate();
     return (

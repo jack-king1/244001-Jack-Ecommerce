@@ -5,6 +5,7 @@ import { SelectProduct } from "../../Model/Product";
 import { IoIosCloseCircle } from "react-icons/io";
 import useWindowDimensions from "../../Model/ScreenDimensions";
 
+//checkout page where uses items are displayed alongside their value and quantity.= with total price of all items.
 function Checkout() {
     const userContext = useContext(UserContext);
     const [quantity, setQuantity] = useState(1);
@@ -24,6 +25,7 @@ function Checkout() {
         setFinalCheckoutItemObjectList(productsList);
     }, []);
 
+    //user has either added or removed an item via the basket page.
     function EditCart(productId, value) {
         userContext.userBasket.EditCartQty(
             productId,
@@ -33,6 +35,7 @@ function Checkout() {
         );
     }
 
+    //remove all items of given product id from basket, this will mean it wont be rendered in the basket anymore.
     function Remove(productId) {
         userContext.userBasket.RemoveItem(
             productId,
@@ -41,6 +44,7 @@ function Checkout() {
         );
     }
 
+    //Manually rerenderes basket on user updates with new basket items.
     function UpdateDisplay() {
         let productsList = [];
         productsList = userContext.userBasket.getBasketItems();
@@ -49,6 +53,7 @@ function Checkout() {
         setRerenderToggle(!rerenderToggle);
     }
 
+    //the plus+minus for each product item card.
     function QuantitySelector(productid, qty) {
         return (
             <div className="flex flex-row mt-2 gap-2">

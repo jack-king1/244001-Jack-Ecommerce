@@ -2,6 +2,7 @@ import React from "react";
 import { FaArrowRight } from "react-icons/fa6";
 
 //make resuable, maybe pass in props for image and text object.
+//A banner that displays a banner on the home page with a gradient.
 function HeroBanner(props) {
     return (
         <div
