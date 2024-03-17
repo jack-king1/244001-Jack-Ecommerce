@@ -40,7 +40,18 @@ const sqlConfig = {
     },
 };
 
-sql.connect(sqlConfig, function (err) {
+const sqlLocal = {
+    server: "localhost",
+    database: "jackkingEcomDB",
+    user: "jack",
+    password: "password",
+    options: {
+        encrypt: false,
+        trustServerCertificate: true,
+    },
+};
+
+sql.connect(sqlLocal, function (err) {
     if (err) console.log(err);
     else console.log("Connected!");
 });
@@ -49,7 +60,6 @@ sql.connect(sqlConfig, function (err) {
 app.get("/products", async (req, res) => {
     console.log("@/products");
     try {
-        await sql.connect(sqlConfig);
         let request = new sql.Request();
         const query =
             "SELECT product_id, fk_category_size_id, fk_category_type_id, product_name, product_desc, image_url, price, sale_percentage FROM Products JOIN OnSale on OnSale.fk_product_id = Products.product_id JOIN ProductImages PI on PI.fk_product_id = Products.product_id JOIN Images on Images.image_id = PI.fk_image_id ";
@@ -66,7 +76,6 @@ app.get("/products/:productid", async (req, res) => {
     const selectedproductid = req.params.productid;
     console.log("ProductID: ", selectedproductid);
     try {
-        await sql.connect(sqlConfig);
         let request = new sql.Request();
         request.input("productid", sql.VarChar, selectedproductid);
         const query =
@@ -84,7 +93,6 @@ app.get("/products/:productid", async (req, res) => {
 app.get("/products/:productid/highlights", async (req, res) => {
     const selectedproductid = req.params.productid;
     try {
-        await sql.connect(sqlConfig);
         let request = new sql.Request();
         request.input("productid", sql.VarChar, selectedproductid);
         const query =
