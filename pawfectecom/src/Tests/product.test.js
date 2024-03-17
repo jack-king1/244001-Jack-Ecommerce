@@ -1,4 +1,5 @@
-import { testProduct, testProduct2 } from "../Model/Product";
+import { testProduct } from "../Model/Product";
+import { testProduct2 } from "../Model/Product";
 
 describe("Product", () => {
     //Unit test that checks total amount against expected amount.
@@ -12,8 +13,8 @@ describe("Product", () => {
     //Unit test that checks total amount against expected amount.
     describe("GetProductPrice", () => {
         it("Return correct price for a test product", () => {
-            let testPrice = testProduct.GetPrice();
-            expect(testPrice).toBe(30.99);
+            let testPrice = testProduct2.GetPrice();
+            expect(testPrice).toBe(100.79);
         });
     });
 });

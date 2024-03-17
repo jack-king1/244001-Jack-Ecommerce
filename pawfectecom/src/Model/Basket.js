@@ -1,5 +1,6 @@
 import { RoundToTwoDecimal } from "./HelperFunctions.js";
-import { Product, SelectProduct, unitTestProduct } from "./Product.js";
+import { SelectProduct } from "./Product.js";
+import Product from "./Product.js";
 
 export class BasketItem {
     constructor(product, qty) {

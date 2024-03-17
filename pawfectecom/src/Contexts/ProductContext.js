@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState, createContext } from "react";
-import { Product } from "../Model/Product.js";
+import Product from "../Model/Product.js";
 import { getProducts } from "../API/AzureAPI.js";
 
 export const ProductContext = createContext();

@@ -1,7 +1,6 @@
 import Basket from "../Model/Basket";
 import { BasketItem } from "../Model/Basket";
 import { SelectProduct } from "../Model/Product";
-import { testProduct } from "../Model/Product";
 
 //unit test for the basket.js functions
 describe("Basket", () => {

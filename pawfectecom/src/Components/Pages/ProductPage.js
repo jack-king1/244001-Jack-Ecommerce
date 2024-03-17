@@ -8,7 +8,7 @@ import {
     getProducts,
     getProduct,
 } from "../../API/AzureAPI.js";
-import { Product } from "../../Model/Product.js";
+import Product from "../../Model/Product.js";
 import useWindowDimensions from "../../Model/ScreenDimensions.js";
 import { UserContext } from "../../Contexts/UserProvider.js";
 
