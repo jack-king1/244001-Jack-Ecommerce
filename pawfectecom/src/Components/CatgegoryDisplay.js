@@ -1,20 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import CategoryButton from "./Buttons/CategoryButton";
-
-//Note to self
-/* improve sale banner
-animations?
-category images
-product page
-cart functionality
-product class
-all products page
-add search icon inside search bar
-add a component for displaying x amount of products like category in home feed.#
-alternate colours for display images for categories. 
-add context for user
-add login screen with google api*/
+import CategoryButton from "./Buttons/CategoryButton.js";
 
 function CatgegoryDisplay(props) {
     return (

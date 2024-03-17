@@ -4,11 +4,11 @@ import {
     Routes,
     BrowserRouter,
 } from "react-router-dom";
-import Layout from "./Components/Layout";
-import Home from "./Components/Pages/Home";
-import Products from "./Components/Pages/Products";
-import ProductPage from "./Components/Pages/ProductPage";
-import Checkout from "./Components/Pages/Checkout";
+import Layout from "./Components/Layout.js";
+import Home from "./Components/Pages/Home.js";
+import Products from "./Components/Pages/Products.js";
+import ProductPage from "./Components/Pages/ProductPage.js";
+import Checkout from "./Components/Pages/Checkout.js";
 
 function App() {
     return (

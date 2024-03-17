@@ -1,5 +1,5 @@
 import React from "react";
-import { stylecategories } from "../Model/Category";
+import { stylecategories } from "../Model/Category.js";
 
 function ProductCategoriesBar(props) {
     return (

@@ -1,10 +1,8 @@
 import React from "react";
-import Banner from "../Banner";
-import Image from "../Image";
-import CategoryHeader from "../CategoryHeader";
-import CatgegoryDisplay from "../CatgegoryDisplay";
-import { sizecategories, stylecategories } from "../../Model/Category";
-import HeroBanner from "../Banners/HeroBanner";
+import CategoryHeader from "../CategoryHeader.js";
+import CatgegoryDisplay from "../CatgegoryDisplay.js";
+import { sizecategories, stylecategories } from "../../Model/Category.js";
+import HeroBanner from "../Banners/HeroBanner.js";
 
 function Home() {
     return (

@@ -1,13 +1,9 @@
 import { useContext, useEffect, useState, useRef } from "react";
-import { UserContext } from "../../Contexts/UserProvider";
-import { Product } from "../../Model/Product";
-import { useParams, useSearchParams } from "react-router-dom";
-import { RoundToTwoDecimal } from "../../Model/HelperFunctions";
 import { useNavigate } from "react-router-dom";
-import ProductCategoriesBar from "../ProductCategoriesBar";
 import { useLocation } from "react-router-dom";
-import { ProductContext } from "../../Contexts/ProductContext";
-import { getProducts } from "../../API/AzureAPI";
+import ProductCategoriesBar from "../ProductCategoriesBar.js";
+import { UserContext } from "../../Contexts/UserProvider.js";
+import { ProductContext } from "../../Contexts/ProductContext.js";
 
 //layout inspo https://www.harrys.com/en/gb/products/dynamic-skin-care-duo/?selected=12331922
 function Products() {

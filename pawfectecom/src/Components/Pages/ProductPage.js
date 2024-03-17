@@ -1,15 +1,16 @@
 import { useContext, useEffect, useState } from "react";
-import { UserContext } from "../../Contexts/UserProvider";
-import { SelectProduct, testProduct } from "../../Model/Product";
-import useWindowDimensions from "../../Model/ScreenDimensions";
+
 import { AiOutlineSafety } from "react-icons/ai";
 import { FaTruck } from "react-icons/fa";
-import { RoundToTwoDecimal } from "../../Model/HelperFunctions";
 import { useParams } from "react-router";
-import { getProduct } from "../../API/AzureAPI";
-import { getProductHighlights } from "../../API/AzureAPI";
-import { getProducts } from "../../API/AzureAPI";
-import { Product } from "../../Model/Product";
+import {
+    getProductHighlights,
+    getProducts,
+    getProduct,
+} from "../../API/AzureAPI.js";
+import { Product } from "../../Model/Product.js";
+import useWindowDimensions from "../../Model/ScreenDimensions.js";
+import { UserContext } from "../../Contexts/UserProvider.js";
 
 function ProductPage() {
     const userContext = useContext(UserContext);

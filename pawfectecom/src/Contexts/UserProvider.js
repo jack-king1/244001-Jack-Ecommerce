@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState, createContext } from "react";
-import Basket from "../Model/Basket";
-import { Product } from "../Model/Product";
-import { unitTestProduct } from "../Model/Product";
+import Basket from "../Model/Basket.js";
+import { unitTestProduct } from "../Model/Product.js";
 
 export const UserContext = createContext();
 

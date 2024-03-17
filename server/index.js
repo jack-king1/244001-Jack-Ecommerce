@@ -8,22 +8,6 @@ const PORT = 3001;
 app.use(express.json());
 app.use(cors());
 
-// const sqlConfig = {
-//     server: "172.187.184.173",
-//     database: "jackkingEcomDB",
-//     user: "sa",
-//     password: "Cheesecake!1",
-//     pool: {
-//         min: 0,
-//         max: 10,
-//         idleTimeoutMillis: 30000,
-//     },
-//     options: {
-//         encrypt: false,
-//         trustServerCertificate: true,
-//     },
-// };
-
 const sqlConfig = {
     server: process.env.DB_HOST,
     database: "jackkingEcomDB",

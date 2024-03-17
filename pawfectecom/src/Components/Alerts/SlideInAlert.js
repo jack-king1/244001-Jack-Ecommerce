@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState, useContext } from "react";
-import { UserContext } from "../../Contexts/UserProvider";
+import { UserContext } from "../../Contexts/UserProvider.js";
 
 //An overlay that subscribes to user events to display messages about messages to cart.
 function SlideInAlert() {

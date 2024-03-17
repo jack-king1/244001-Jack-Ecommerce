@@ -4,9 +4,9 @@ import { LuShoppingBasket } from "react-icons/lu";
 import { CiUser } from "react-icons/ci";
 import { FaCaretDown } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "../Contexts/UserProvider";
-import SlideInAlert from "./Alerts/SlideInAlert";
-import { stylecategories } from "../Model/Category";
+import { UserContext } from "../Contexts/UserProvider.js";
+import SlideInAlert from "./Alerts/SlideInAlert.js";
+import { stylecategories } from "../Model/Category.js";
 
 function Navbar() {
     const navigate = useNavigate();

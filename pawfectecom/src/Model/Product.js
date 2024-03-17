@@ -1,6 +1,5 @@
-import { CATEGORY_TYPE } from "./Category";
-import { RoundToTwoDecimal } from "./HelperFunctions";
-const Decimal = require("decimal.js");
+import { CATEGORY_TYPE } from "./Category.js";
+import { RoundToTwoDecimal } from "./HelperFunctions.js";
 export class Product {
     constructor(
         id,
