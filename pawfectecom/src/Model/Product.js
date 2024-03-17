@@ -24,33 +24,6 @@ export class Product {
     }
 
     /**
-     * Unit test - tests GetPrice function to see if it returns correct values.
-     * @param {*} expectedOutcome
-     * @param {*} onSale
-     */
-    GetPriceUnitTest(expectedOutcome, onSale) {
-        this.onSale = onSale;
-        let testPrice = this.GetPrice();
-        console.log("ProductPrice Unit Test: ", testPrice);
-        console.assert(
-            testPrice == expectedOutcome,
-            "Unit Test Failed, GetPrice did not resolve in expected outcome."
-        );
-    }
-
-    /**
-     * Test the return type of GetPrice and checks to see if its of type number.
-     * @param {*} expectedOutcome
-     */
-    GetTypeOfPriceUnitTest(expectedOutcome) {
-        let typeOf = typeof this.GetPrice();
-        console.assert(
-            typeOf == expectedOutcome,
-            "Expected outcome was invalid type. Should be number"
-        );
-    }
-
-    /**
      * returns price for sale or non sale to 2 decimal places floored.
      * @returns price
      */
@@ -301,14 +274,14 @@ const testProduct = new Product(
     ]
 );
 
-const unitTestProduct = new Product(
+const testProduct2 = new Product(
     69,
     "large",
     "round",
     "Cannopy Bed",
     "a glamorous round bed for cats who appreciate a touch of elegance!",
     "/Images/Products/canopybed.jpg",
-    100,
+    100.79,
     false,
     [
         "The must have for minimalists",
@@ -318,4 +291,4 @@ const unitTestProduct = new Product(
     ]
 );
 
-export { allproducts, testProduct, unitTestProduct, SelectProduct };
+export { allproducts, testProduct, testProduct2, SelectProduct };

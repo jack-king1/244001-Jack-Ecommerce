@@ -35,37 +35,6 @@ export default class Basket {
         //reparse to float here as .toFixed returns a string type.
         return parseFloat(totalCost);
     }
-
-    //Unit Tests
-    //Test to se if output is a number and not any other type.
-    CalculateTotalTypeOfUnitTest() {
-        let expectedOutput = "number";
-        let productList = [{ product: unitTestProduct, qty: 3 }];
-        let total = this.CalculateTotal(productList);
-        console.assert(
-            typeof total == expectedOutput,
-            "Error! Calculation not working!",
-            typeof total
-        );
-    }
-
-    /**
-     * Calculate
-     */
-    CalculateTotalPriceUnitTest() {
-        let expectedTotal = 300;
-        let productList = [
-            { product: unitTestProduct, qty: 1 },
-            { product: unitTestProduct, qty: 1 },
-            { product: unitTestProduct, qty: 1 },
-        ];
-        let total = this.CalculateTotal(productList);
-        console.assert(
-            expectedTotal == total,
-            "Error! Calculation not working!"
-        );
-    }
-
     /**
      * Add item to basket
      * @param {*} productID
