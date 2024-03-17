@@ -8,7 +8,7 @@ export class BasketItem {
     }
 }
 
-export default class Basket {
+export class Basket {
     constructor() {
         //items is the array that holds all the item ids currently in basket.
         this.basketItems = [];
