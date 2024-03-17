@@ -1,4 +1,5 @@
-import { BasketItem, Basket } from "../Model/Basket";
+import Basket from "../Model/Basket";
+import { BasketItem } from "../Model/Basket";
 import { SelectProduct } from "../Model/Product";
 
 describe("Basket", () => {
