@@ -2,6 +2,7 @@ import { RoundToTwoDecimal } from "./HelperFunctions.js";
 import { SelectProduct } from "./Product.js";
 import Product from "./Product.js";
 
+//the basket item class is used to store multiple items in one row in checkout. product & qty
 export class BasketItem {
     constructor(product, qty) {
         this.product = product;
@@ -9,6 +10,7 @@ export class BasketItem {
     }
 }
 
+//general basket class which holds add, remove, edit, calculate total functions
 export default class Basket {
     constructor() {
         //items is the array that holds all the item ids currently in basket.
