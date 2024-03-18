@@ -2,7 +2,7 @@ import React from "react";
 import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../../Contexts/UserProvider.js";
 import { IoIosCloseCircle } from "react-icons/io";
-import useWindowDimensions from "../../Model/ScreenDimensions.js";
+import useWindowDimensions from "../../Helper/ScreenDimensions.js";
 
 //checkout page where uses items are displayed alongside their value and quantity.= with total price of all items.
 function Checkout() {

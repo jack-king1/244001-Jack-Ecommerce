@@ -1,4 +1,4 @@
-import { RoundToTwoDecimal } from "./HelperFunctions.js";
+import { RoundToTwoDecimal } from "../Helper/HelperFunctions.js";
 import { SelectProduct } from "./Product.js";
 import Product from "./Product.js";
 

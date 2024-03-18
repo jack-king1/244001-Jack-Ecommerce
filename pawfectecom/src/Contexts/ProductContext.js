@@ -8,13 +8,11 @@ function ProductProvider({ children }) {
     const [allProducts, setAllProducts] = useState([]);
     const [productsLoaded, setProductsLoaded] = useState(false);
     const [eventListeners, setEventListeners] = useState({});
-    //
     useEffect(() => {
         LoadProducts();
     }, []);
 
     //emit event that all products have loaded.
-
     useEffect(() => {
         console.log("Loaded products", allProducts);
         emit("productsLoaded", allProducts);

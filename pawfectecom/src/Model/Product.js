@@ -1,5 +1,5 @@
 import { CATEGORY_TYPE } from "./Category.js";
-import { RoundToTwoDecimal } from "./HelperFunctions.js";
+import { RoundToTwoDecimal } from "../Helper/HelperFunctions.js";
 export default class Product {
     constructor(
         id,
