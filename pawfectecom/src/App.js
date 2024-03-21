@@ -9,8 +9,12 @@ import Home from "./Components/Pages/Home.js";
 import Products from "./Components/Pages/Products.js";
 import ProductPage from "./Components/Pages/ProductPage.js";
 import Checkout from "./Components/Pages/Checkout.js";
+import { useEffect } from "react";
 
 function App() {
+    useEffect(() => {
+        document.title = "Pawfect Store";
+    });
     return (
         <BrowserRouter>
             <Routes>
